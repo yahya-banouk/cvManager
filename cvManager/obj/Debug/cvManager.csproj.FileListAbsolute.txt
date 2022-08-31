@@ -3,11 +3,8 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\bin\Debug\cvMana
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\bin\Debug\cvManager.pdb
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.csproj.AssemblyReference.cache
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.csproj.SuggestedBindingRedirects.cache
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\MainWindow.g.cs
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\App.g.cs
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager_MarkupCompile.cache
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager_MarkupCompile.lref
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\MainWindow.baml
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.g.resources
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.Properties.Resources.resources
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.csproj.GenerateResource.cache
@@ -19,3 +16,6 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\L
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\CustomControls\BindablePasswordBox.g.cs
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\CustomControls\BindablePasswordBox.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\App.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\MainWindow.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\MainWindow.baml

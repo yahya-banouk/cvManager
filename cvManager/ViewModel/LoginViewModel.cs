@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using cvManager.Repositories;
 using System.Net;
+using System.Threading;
+using System.Security.Principal;
 
 namespace cvManager.ViewModel
 {
@@ -96,8 +98,19 @@ namespace cvManager.ViewModel
 
         private void ExecuteLoginCommand(object obj)
         {
-            //i was here 
+            
             var isValidUser = userRepository.AuthenticationUser(new NetworkCredential(Username, Password));
+            if(isValidUser)
+            {
+                Thread.CurrentPrincipal = new GenericPrincipal(
+                    new GenericIdentity(Username), null);
+                IsViewVisible = false;
+            }
+            else
+            {
+                    ErrorMessage = "* Invalid username or password";
+            }
+            
         }
 
         private void ExecuteRecoverPassCommand(string username, string email)
