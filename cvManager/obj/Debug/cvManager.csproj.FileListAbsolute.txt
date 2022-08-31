@@ -16,3 +16,6 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvMana
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.pdb
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\LoginView.g.cs
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\LoginView.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\CustomControls\BindablePasswordBox.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\CustomControls\BindablePasswordBox.baml

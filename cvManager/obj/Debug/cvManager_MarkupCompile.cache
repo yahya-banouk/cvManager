@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\App.xaml
-2-558252558
+3-144770630
 
-6912368988
+14-185174887
 13-1310406943
-MainWindow.xaml;View\LoginView.xaml;
+CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;View\LoginView.xaml;
 
 False
 
