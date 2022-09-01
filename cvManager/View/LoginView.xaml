@@ -28,7 +28,7 @@
                         />
         </Border.Background>
         <Border CornerRadius="10"
-            BorderThickness="2"
+            BorderThickness="3"
             Opacity="0.95">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
