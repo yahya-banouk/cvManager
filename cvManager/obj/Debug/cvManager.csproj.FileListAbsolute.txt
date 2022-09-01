@@ -17,5 +17,7 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\Genera
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\CustomControls\BindablePasswordBox.g.cs
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\CustomControls\BindablePasswordBox.baml
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\App.g.cs
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\MainWindow.g.cs
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\MainWindow.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\Styles\UIColors.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\App.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\MainView.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\MainView.baml

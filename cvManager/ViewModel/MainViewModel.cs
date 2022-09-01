@@ -32,7 +32,7 @@ namespace cvManager.ViewModel
         public MainViewModel()
         {
             userRepository = new UserRepository();
-            CurrentUserAccount = new UserAccountModel();
+            
             LoadCurrentUserData();
         }
 
@@ -42,17 +42,21 @@ namespace cvManager.ViewModel
             if(user != null)
             {
 
-
-                CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"BienVenue {user.Name} {user.LastName} ;)";
-                    CurrentUserAccount.ProfilePicture = null;
+                CurrentUserAccount = new UserAccountModel()
+                {
+                    Username = user.Username,
+                    DisplayName = $"BienVenue {user.Name} {user.LastName} ;)",
+                    ProfilePicture = null
+                };
+                
 
                 
             }
             else
             {
-                CurrentUserAccount.DisplayName = "Utilisateur Invalide ,vous n'etes pas authentifier";
+                MessageBox.Show("Utilisateur Invalide ,vous n'etes pas authentifier");
                 Application.Current.Shutdown();
+
             }
         }
     }

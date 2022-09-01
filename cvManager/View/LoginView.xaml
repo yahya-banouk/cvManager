@@ -32,17 +32,17 @@
             Opacity="0.95">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Green" Offset="1"/>
-                    <GradientStop Color="Gold" Offset="0.75"/>
-                    <GradientStop Color="Blue" Offset="0"/>
+                    <GradientStop Color="{StaticResource winBorderColor1}" Offset="1"/>
+                    <GradientStop Color="{StaticResource winBorderColor2}" Offset="0.75"/>
+                    <GradientStop Color="{StaticResource winBorderColor3}" Offset="0"/>
 
                 </LinearGradientBrush>
 
             </Border.BorderBrush>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="Green" Offset="0"/>
-                    <GradientStop Color="BlueViolet" Offset="0.75"/>
+                    <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0.75"/>
 
 
                 </LinearGradientBrush>
