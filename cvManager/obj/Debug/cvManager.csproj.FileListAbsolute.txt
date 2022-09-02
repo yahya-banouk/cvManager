@@ -24,3 +24,7 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\M
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\Styles\ButtonStyles.baml
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.csproj.CopyComplete
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\CondidateView.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\HomeView.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\CondidateView.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\HomeView.baml
