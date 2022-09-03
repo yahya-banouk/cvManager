@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ using System.Windows;
 using System.Windows.Input;
 using cvManager.Model;
 using cvManager.Repositories;
+using cvManager.View;
 using FontAwesome.Sharp;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace cvManager.ViewModel
 {
@@ -98,6 +101,12 @@ namespace cvManager.ViewModel
 
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCondidateViewCommand { get; }
+
+        public ICommand ShowAddCondedateViewCommand { get; }
+      
+       
+
+
         //now it's time to initialize these commands in the constructor using the ViewModelCommand class 
 
 
@@ -108,12 +117,23 @@ namespace cvManager.ViewModel
             //here it comes 
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowCondidateViewCommand = new ViewModelCommand(ExecuteShowCondidateViewCommand);
+            ShowAddCondedateViewCommand = new ViewModelCommand(ExecuteShowAddCondidateViewCommand);
+            
 
 
             //Default View
             ExecuteShowHomeViewCommand(null);
             //
             LoadCurrentUserData();
+        }
+
+       
+
+        private void ExecuteShowAddCondidateViewCommand(object obj)
+        {
+            CurrentChildView = new AddCondidateViewModel();
+            Caption = "Nouveau Condidat";
+            Icon = IconChar.UserPlus;
         }
 
         private void ExecuteShowCondidateViewCommand(object obj)

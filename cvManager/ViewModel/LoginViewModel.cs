@@ -73,9 +73,11 @@ namespace cvManager.ViewModel
 
         //-> Commands
         public ICommand LoginCommand { get; }
+        public ICommand LogoutCommand { get; }
         public ICommand RecoverPasswordCommand { get; }
         public ICommand ShowPasswordCommand { get; }
         public ICommand RememberPasswordCommand { get; }
+
        
 
 
@@ -85,7 +87,10 @@ namespace cvManager.ViewModel
             userRepository = new UserRepository();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("",""));
-        }
+            
+    }
+
+        
 
         private bool CanExecuteLoginCommand(object obj)
         {

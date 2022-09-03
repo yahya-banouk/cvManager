@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Data;
 
 namespace cvManager.Repositories
 {
@@ -42,6 +43,23 @@ namespace cvManager.Repositories
             }
             
         }
+        private List<T> GetList<T>(IDataReader reader)
+        {
+            List<T> list = new List<T>();
+            while (reader.Read())
+            {
+                var type = typeof(T);
+                T obj=(T)Activator.CreateInstance(type);
+                foreach (var prop in type.GetProperties())
+                {
+                    var PropTaype = prop.PropertyType;
+                    prop.SetValue(obj,Convert.ChangeType(reader[prop.Name].ToString(),PropTaype));
+                }
+                list.Add(obj);
+
+            }
+            return list;
+        }
 
         public void Edit(CondidatModel condidatModel)
         {
@@ -50,7 +68,7 @@ namespace cvManager.Repositories
 
         public List<CondidatModel> GetAll()
         {
-            List<CondidatModel> list;
+            List<CondidatModel> list=null;
             using (var connection = GetConnection())
             using (var command = new SqlCommand())
             {
@@ -58,13 +76,15 @@ namespace cvManager.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "Select * from condidat";
-                ;
-                //Execution
-                list = (List<CondidatModel>)command.ExecuteScalar();
-                return list;
-
+                using (var reader = command.ExecuteReader())
+                {
+                    
+                    list = GetList<CondidatModel>(reader);
+                }
             }
+            return list;
         }
+          
 
         public CondidatModel GetById(int id)
         {
@@ -91,4 +111,14 @@ namespace cvManager.Repositories
             throw new NotImplementedException();
         }
     }
-}
+
+        
+
+        
+
+       
+
+        
+
+        
+    }

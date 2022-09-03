@@ -22,6 +22,9 @@
         <DataTemplate DataType="{x:Type view:CondidateViewModel}">
             <local:CondidateView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type view:AddCondidateViewModel}">
+            <local:AddCondidateView/>
+        </DataTemplate>
     </Window.Resources>
  
 
@@ -101,7 +104,8 @@
                         </RadioButton>
 
                         <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color3}">
+                                 Tag="{StaticResource color3}"
+                                     Command="{Binding ShowAddCondedateViewCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="UserPlus" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Nouveau Condidat" Style="{StaticResource menuButtonText}"/>
@@ -126,6 +130,7 @@
 
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color12}"
+                                    Click="Logout_Click" 
                                      >
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="RightFromBracket" Style="{StaticResource menuButtonIcon}"/>
