@@ -15,7 +15,7 @@ namespace cvManager.Model
         void Remove(int id);
         UserModel GetById(int id);
         UserModel GetByUsername(string username);
-        IEnumerable<UserModel> GetByAll();
+        
 
 
     }

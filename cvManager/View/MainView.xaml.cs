@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Runtime;
 using System.Windows.Interop;
+using System.Threading;
 
 namespace cvManager.View
 {
@@ -58,6 +59,15 @@ namespace cvManager.View
                 this.WindowState = WindowState.Maximized;
             else
                 this.WindowState = WindowState.Normal;
+        }
+
+       
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+        
         }
     }
 }

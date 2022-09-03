@@ -28,3 +28,5 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\C
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\HomeView.g.cs
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\CondidateView.baml
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\HomeView.baml
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\AddCondidateView.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\AddCondidateView.baml

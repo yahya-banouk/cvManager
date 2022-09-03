@@ -1,5 +1,4 @@
-﻿using cvManager.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +16,13 @@ using System.Windows.Shapes;
 namespace cvManager.View
 {
     /// <summary>
-    /// Logique d'interaction pour CondidateView.xaml
+    /// Logique d'interaction pour AddCondidateView.xaml
     /// </summary>
-    public partial class CondidateView : UserControl
+    public partial class AddCondidateView : UserControl
     {
-        public CondidateView()
+        public AddCondidateView()
         {
             InitializeComponent();
-            //this.DataContext = new CondidateViewModel();
         }
     }
 }
