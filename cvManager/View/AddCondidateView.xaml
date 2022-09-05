@@ -4,96 +4,263 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:cvManager.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
+             xmlns:viewModel="clr-namespace:cvManager.ViewModel" d:DataContext="{d:DesignInstance Type=viewModel:CondidateViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:CondidateViewModel/>
+    </UserControl.DataContext>
     <Grid>
-        <StackPanel Width="400"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                            Margin="0,35,0,0">
-            <!--Image Source="/Images/LOGOHIBAPOWER 2020.png"
-                           Height="100" Width="100"/>
+        <StackPanel Orientation="Vertical" >
+                   <StackPanel Orientation="Horizontal"  Margin="10,10,10,0" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+                            <TextBlock Text="Nom"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,35,0,0"/>
 
-            <TextBlock Text="Votre Partennaire EcoEnergie"
-                               Foreground="LightGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               TextWrapping="Wrap"
-                               TextAlignment="Center"
-                               Margin="0,5,0,0"/-->
+                                <TextBox x:Name="txtNom"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
 
+                                <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                                </TextBox.Background>
+                            </TextBox>
 
-            <TextBlock Text="Adresse"
+                            <TextBlock Text="Prenom"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,35,0,0"/>
 
-            <TextBox x:Name="txtUser"
-                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
+                            <TextBox x:Name="txtPrenom"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
 
-                <TextBox.Background>
-                    <ImageBrush ImageSource="/Images/user-icon.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                </TextBox.Background>
-            </TextBox>
+                                <TextBox.Background>
+                                    <ImageBrush ImageSource="/Images/lastname-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+                                    </TextBox.Background>
 
-            <TextBlock Text="Adresse"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"                             
-                               Margin="0,35,0,0"/>
-
-            <TextBox x:Name="t2"
-                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
-
-                <TextBox.Background>
-                    <ImageBrush ImageSource="/Images/user-icon.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                </TextBox.Background>
-            </TextBox>
+                    </TextBox>
 
 
 
-            <TextBlock Text=""
+                            <TextBlock Text=""
                                Foreground="#D7596D"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,30,0,0"
                                TextWrapping="Wrap"/>
+                        </StackPanel>
+                        
+                       <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <TextBlock Text="Age"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,35,0,0"/>
 
-            <Button x:Name="btnLogin"   
+                                <TextBox x:Name="txtAge"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
+
+                                <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/age-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                                </TextBox.Background>
+                            </TextBox>
+
+                            <TextBlock Text="Email"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,35,0,0"/>
+
+                            <TextBox x:Name="txtEmail"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
+
+                                <TextBox.Background>
+                                    <ImageBrush ImageSource="/Images/email-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+                                </TextBox.Background>
+                            </TextBox>
+
+
+
+                            <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,30,0,0"
+                               TextWrapping="Wrap"/>
+                        </StackPanel>
+                        
+
+                    </StackPanel >
+            
+            
+                    <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+                    <TextBlock Text="Niveau d'etude"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtLevel"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/level-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Experience"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtExperience"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/experience-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+
+                    <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,30,0,0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                    <TextBlock Text="Profession"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtProfession"
+                                    Text=""
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/profession-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <Button x:Name="btnAdd"   
                             Command=""
                             BorderThickness="0"
-                            Content="s'Authentifier"
+                            Content="Ajouter/Mettre ajour"
                             Foreground="White"
                             FontSize="12"
                             FontFamily="Montserrat"
@@ -101,50 +268,44 @@
                             Margin="0,50,0,0"
                             >
 
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#462AD8"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#A0BB46"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#A0BB46"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="150" Height="40"
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
+                                    <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
 
-            <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center"
-                                Margin="0,15,0,0">
 
-                <TextBlock Text="Mot de Passe Oublié?"
-                               Foreground="DarkGray"
+                    <TextBlock Text=""
+                               Foreground="#D7596D"
                                FontSize="12"
                                FontWeight="Medium"
-                               FontFamily="Montserrat"/>
-
-                <TextBlock Text="Reset"
-                               Foreground="White"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               Cursor="Hand"
-                               Margin="8,0,0,0"/>
+                               FontFamily="Montserrat"                             
+                               Margin="0,30,0,0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
 
             </StackPanel>
-
+            
         </StackPanel>
-
+        
+        
     </Grid>
 </UserControl>

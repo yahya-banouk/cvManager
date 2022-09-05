@@ -24,7 +24,7 @@ namespace cvManager.Repositories
 
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO condidat VALUES (@name,@lastname,@age,@email,@level,@experience,@profission)";
+                    command.CommandText = "INSERT INTO condidate VALUES (@name,@lastname,@age,@email,@level,@experience,@profission)";
                     command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = condidatModel.Name;
                     command.Parameters.Add("@lastname", System.Data.SqlDbType.NVarChar).Value = condidatModel.LastName;
                     command.Parameters.Add("@age", System.Data.SqlDbType.NVarChar).Value = condidatModel.Age;
@@ -75,7 +75,7 @@ namespace cvManager.Repositories
 
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from condidat";
+                command.CommandText = "Select * from condidate";
                 using (var reader = command.ExecuteReader())
                 {
                     

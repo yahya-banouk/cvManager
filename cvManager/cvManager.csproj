@@ -156,7 +156,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\back-image.jpg" />
     <Resource Include="Images\key-icon.png" />
@@ -166,6 +165,16 @@
   <ItemGroup>
     <Resource Include="Images\LOGOHIBA.PNG" />
     <Resource Include="Images\LOGOHIBAPOWER 2020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\age-icon.png" />
+    <Resource Include="Images\email-icon.png" />
+    <Resource Include="Images\experience-icon.png" />
+    <Resource Include="Images\lastname-icon.png" />
+    <Resource Include="Images\level-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\profession-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
