@@ -14,6 +14,7 @@ namespace cvManager.ViewModel
     public class CondidateViewModel: ViewModelBase
     {
 
+        private int _id;
         private string _name;
         private string _lastName;
         private int _age;
@@ -23,6 +24,8 @@ namespace cvManager.ViewModel
         private string _profession;
         private ObservableCollection<CondidatModel> _CondidateRecords;
         private ICondidatRepository _CondidatRepository;
+        private CondidatModel _condidatModel=null;
+
 
         public string Name 
         { 
@@ -36,6 +39,20 @@ namespace cvManager.ViewModel
             {
                 _name = value;
                 OnPropertyChanged(nameof(Name));
+            }
+        }
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+
+            {
+                _id = value;
+                OnPropertyChanged(nameof(Id));
             }
         }
         public string LastName 
@@ -183,7 +200,7 @@ namespace cvManager.ViewModel
             get
             {
                 if (_deleteCommand == null)
-                    _deleteCommand = new ViewModelCommand(param => DeleteStudent((int)param), null);
+                    _deleteCommand = new ViewModelCommand(param => DeleteCondidate((int)System.Convert.ToInt32(param)), null);
 
                 return _deleteCommand;
             }
@@ -194,6 +211,7 @@ namespace cvManager.ViewModel
             //_studentEntity = new Student();
             //_repository = new StudentRepository();
             //StudentRecord = new StudentRecord();
+            //_condidatModel = new CondidatModel();
             _CondidatRepository = new CondidateRepository();
             GetAll();
         }
@@ -202,18 +220,18 @@ namespace cvManager.ViewModel
         {
             
 
-            _name = string.Empty;
-            _lastName = string.Empty;
-            _age = 0;
-            _email= string.Empty;
-            _level = string.Empty;
-            _experience = 0;
-            _profession = string.Empty;
+            Name = string.Empty;
+            LastName = string.Empty;
+            Age = 0;
+            Email= string.Empty;
+            Level = string.Empty;
+            Experience = 0;
+            Profession = string.Empty;
         }
 
-        public void DeleteStudent(int id)
+        public void DeleteCondidate(int id)
         {
-            if (MessageBox.Show("Confirm delete of this record?", "Student", MessageBoxButton.YesNo)
+            if (MessageBox.Show("Confirm delete of this record?", "Condidate", MessageBoxButton.YesNo)
                 == MessageBoxResult.Yes)
             {
                 try
@@ -223,7 +241,7 @@ namespace cvManager.ViewModel
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error occured while saving. " + ex.InnerException);
+                    MessageBox.Show("Error occured while deleting. " + ex.InnerException);
                 }
                 finally
                 {
@@ -234,26 +252,23 @@ namespace cvManager.ViewModel
 
         public void SaveData()
         {
-            /*if (StudentRecord != null)
+            if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(LastName)   && String.IsNullOrEmpty(Level) && String.IsNullOrEmpty(Profession))
             {
-                _studentEntity.Name = StudentRecord.Name;
-                _studentEntity.Age = StudentRecord.Age;
-                _studentEntity.Address = StudentRecord.Address;
-                _studentEntity.Contact = StudentRecord.Contact;
+                _condidatModel.Name = Name;
+                _condidatModel.LastName = LastName; 
+                _condidatModel.Level = Level;
+                _condidatModel.Profession = Profession;
+                _condidatModel.Experience = Experience;
+                _condidatModel.Age = Age;
+                _condidatModel.Email = Email;
+
+
+                
 
                 try
                 {
-                    if (StudentRecord.Id <= 0)
-                    {
-                        _repository.AddStudent(_studentEntity);
-                        MessageBox.Show("New record successfully saved.");
-                    }
-                    else
-                    {
-                        _studentEntity.ID = StudentRecord.Id;
-                        _repository.UpdateStudent(_studentEntity);
-                        MessageBox.Show("Record successfully updated.");
-                    }
+                    _CondidatRepository.Add(_condidatModel);
+                    MessageBox.Show("la conservation est effectuer avec succée ");
                 }
                 catch (Exception ex)
                 {
@@ -264,7 +279,7 @@ namespace cvManager.ViewModel
                     GetAll();
                     ResetData();
                 }
-            }*/
+            }
         }
 
         public void EditData(int id)

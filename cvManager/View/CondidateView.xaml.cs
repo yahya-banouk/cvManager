@@ -24,7 +24,7 @@ namespace cvManager.View
         public CondidateView()
         {
             InitializeComponent();
-            //this.DataContext = new CondidateViewModel();
+            this.DataContext = new CondidateViewModel();
         }
     }
 }

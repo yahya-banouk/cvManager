@@ -108,7 +108,18 @@ namespace cvManager.Repositories
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM condidate WHERE Id=@Id";
+                command.Parameters.Add("@Id", System.Data.SqlDbType.NVarChar).Value = id;
+
+
+               command.ExecuteScalar() ;
+
+            }
         }
     }
 

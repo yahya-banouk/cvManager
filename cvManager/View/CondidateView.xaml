@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:cvManager.View" 
              
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
-             xmlns:viewModel="clr-namespace:cvManager.ViewModel" d:DataContext="{d:DesignInstance Type=viewModel:CondidateViewModel}"
+             xmlns:viewModel="clr-namespace:cvManager.ViewModel" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -42,7 +42,7 @@
                              Margin="5,5,0,0"></TextBox>
             </StackPanel>
             <Button Grid.Column="1"
-                            Command="{Binding LoginCommand}"                            
+                            Command=""                            
                             Content="Search"                            
                             FontSize="12"
                             FontFamily="Montserrat"
@@ -80,17 +80,30 @@
                 Padding="10">
             <DataGrid ColumnWidth="*"
                   Background="#200F53"
-                  BorderThickness="0" ItemsSource="{Binding CondidateRecords}" AutoGenerateColumns="False">
+                  BorderThickness="0" ItemsSource="{Binding CondidateRecords}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="#BCBEE0"/>
+                        <Setter Property="Foreground" Value="White"/>
                         <Setter Property="Padding" Value="10,0,0,10"/>
                         <Setter Property="FontFamily" Value="Montserrat"/>
                         <Setter Property="FontSize" Value="15"/>
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="FontFamily" Value="Montserrat"/>
+                        <Setter Property="Foreground" Value="#BCBEE0"/>
+                        <Setter Property="FontSize" Value="13"/>
+                        <Setter Property="BorderBrush" Value="Aquamarine"></Setter>
+                        <Setter Property="BorderThickness" Value="2"></Setter>
+
+
+                    </Style>
+                </DataGrid.RowStyle>
                 <DataGrid.Columns>
+                    
                     <DataGridTextColumn Binding="{Binding Path=Id ,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Name" Visibility="Hidden" HeaderStringFormat=""/>
                     <DataGridTextColumn Binding="{Binding Path=Name,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="First name"/>
                     <DataGridTextColumn Binding="{Binding Path=LastName,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Last name"/>
@@ -103,8 +116,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Select" x:Name="ButtonEdit" CommandParameter="{Binding Path=Id}"
-                                        Command="{Binding Path=DataContext.EditCommand,RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType=Window}}">
+                                        Command="">
                                     <Button.Style>
                                         <Style TargetType="Button">
                                             <Setter Property="Background" Value="{StaticResource color3}"/>
@@ -137,7 +149,7 @@
                             <DataTemplate>
                                 <Button Content="Delete" x:Name="ButtonDelete" CommandParameter="{Binding Path=Id}"
                                         Command="{Binding Path=DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType=Window}}">
+                                                AncestorType=UserControl}}">
                                     <Button.Style>
                                         <Style TargetType="Button">
                                             <Setter Property="Background" Value="{StaticResource color4}"/>

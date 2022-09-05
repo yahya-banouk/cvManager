@@ -4,18 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:cvManager.View"
-             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
-             xmlns:viewModel="clr-namespace:cvManager.ViewModel" d:DataContext="{d:DesignInstance Type=viewModel:CondidateViewModel}"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" d:DataContext="{d:DesignInstance Type=viewModel:AddCondidateViewModel}"
+             xmlns:viewModel="clr-namespace:cvManager.ViewModel" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
-        <viewModel:CondidateViewModel/>
+        <viewModel:AddCondidateViewModel/>
     </UserControl.DataContext>
     <Grid>
         <StackPanel Orientation="Vertical" >
                    <StackPanel Orientation="Horizontal"  Margin="10,10,10,0" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
-                            <TextBlock Text="Nom"
+                <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+                    <TextBlock Text="Nom"
                                     Foreground="DarkGray"
                                     FontSize="12"
                                     FontWeight="Medium"
@@ -23,7 +23,7 @@
                                     Margin="0,35,0,0"/>
 
                                 <TextBox x:Name="txtNom"
-                                    Text=""
+                                    Text="{Binding Path=Name, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -52,7 +52,7 @@
                                Margin="0,35,0,0"/>
 
                             <TextBox x:Name="txtPrenom"
-                                    Text=""
+                                    Text="{Binding Path=LastName, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -93,7 +93,7 @@
                                     Margin="0,35,0,0"/>
 
                                 <TextBox x:Name="txtAge"
-                                    Text=""
+                                    Text="{Binding Path=Age, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -122,7 +122,7 @@
                                Margin="0,35,0,0"/>
 
                             <TextBox x:Name="txtEmail"
-                                    Text=""
+                                    Text="{Binding Path=Email, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -167,7 +167,7 @@
                                     Margin="0,35,0,0"/>
 
                     <TextBox x:Name="txtLevel"
-                                    Text=""
+                                    Text="{Binding Path=Level, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -196,7 +196,7 @@
                                Margin="0,35,0,0"/>
 
                     <TextBox x:Name="txtExperience"
-                                    Text=""
+                                    Text="{Binding Path=Experience, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -236,7 +236,7 @@
                                     Margin="0,35,0,0"/>
 
                     <TextBox x:Name="txtProfession"
-                                    Text=""
+                                    Text="{Binding Path=Profession, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -256,16 +256,49 @@
                                         AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
+                    <Button x:Name="btnReset"   
+                            Command="{Binding ResetCommand}"
+                            BorderThickness="0"
+                            Content="Réinitialiser"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,20,0,0"
+                            >
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#55717E"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#A0BB46"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
                     <Button x:Name="btnAdd"   
-                            Command=""
+                            Command="{Binding SaveCommand}"
                             BorderThickness="0"
                             Content="Ajouter/Mettre ajour"
                             Foreground="White"
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="0,50,0,0"
+                            Margin="0,20,0,0"
                             >
 
                         <Button.Style>
