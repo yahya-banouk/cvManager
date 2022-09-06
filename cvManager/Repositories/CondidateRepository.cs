@@ -63,7 +63,26 @@ namespace cvManager.Repositories
 
         public void Edit(CondidatModel condidatModel)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("here we r");
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "UPDATE condidate SET Name=@Name, LastName=@Lastname, Age=@Age, Email=@Email, [Level]=@Level, Experience=@Experience , Profession=@Profession  WHERE Id=@Id";
+                command.Parameters.Add("@Id", System.Data.SqlDbType.NVarChar).Value = condidatModel.Id;
+                command.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar).Value = condidatModel.Name;
+                command.Parameters.Add("@Lastname", System.Data.SqlDbType.NVarChar).Value = condidatModel.LastName;
+                command.Parameters.Add("@Age", System.Data.SqlDbType.NVarChar).Value = condidatModel.Age;
+                command.Parameters.Add("@Email", System.Data.SqlDbType.NVarChar).Value = condidatModel.Email;
+                command.Parameters.Add("@Level", System.Data.SqlDbType.NVarChar).Value = condidatModel.Level;
+                command.Parameters.Add("@Experience", System.Data.SqlDbType.NVarChar).Value = condidatModel.Experience;
+                command.Parameters.Add("@Profession", System.Data.SqlDbType.NVarChar).Value = condidatModel.Profession;
+
+
+                command.ExecuteScalar();
+
+            }
         }
 
         public List<CondidatModel> GetAll()
@@ -86,9 +105,24 @@ namespace cvManager.Repositories
         }
           
 
-        public CondidatModel GetById(int id)
+        public List<CondidatModel> GetById(int id)
         {
-            throw new NotImplementedException();
+            List<CondidatModel> list = null;
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "Select * from condidate where Id=@Id";
+                command.Parameters.Add("@Id", System.Data.SqlDbType.NVarChar).Value = id;
+                using (var reader = command.ExecuteReader())
+                {
+
+                    list = GetList<CondidatModel>(reader);
+                }
+            }
+            return list;
         }
 
         public List<CondidatModel> GetByLevel(string level)

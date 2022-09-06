@@ -8,7 +8,7 @@
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
              xmlns:viewModel="clr-namespace:cvManager.ViewModel" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="460" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewModel:CondidateViewModel/>
     </UserControl.DataContext>
@@ -16,7 +16,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -116,7 +117,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Select" x:Name="ButtonEdit" CommandParameter="{Binding Path=Id}"
-                                        Command="">
+                                        Command="{Binding Path=DataContext.EditCommand,RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=UserControl}}">
                                     <Button.Style>
                                         <Style TargetType="Button">
                                             <Setter Property="Background" Value="{StaticResource color3}"/>
@@ -181,6 +183,331 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
+        <StackPanel Orientation="Horizontal"  Margin="0,0,0,0"  Grid.Row="2" >
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <TextBlock Text="Nom"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,5,0,0"/>
+
+                <TextBox x:Name="txtNom"
+                                    Text="{Binding Path=Name, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="195"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/user-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Prenom"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,7,0,0"/>
+
+                <TextBox x:Name="txtPrenom"
+                                    Text="{Binding Path=LastName, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="195"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/lastname-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+                    </TextBox.Background>
+
+                </TextBox>
+
+
+
+                <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,2,0,0"
+                               TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <TextBlock Text="Age"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,5,0,0"/>
+
+                <TextBox x:Name="txtAge"
+                                    Text="{Binding Path=Age, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="195"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/age-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Email"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,7,0,0"/>
+
+                <TextBox x:Name="txtEmail"
+                                    Text="{Binding Path=Email, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/email-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+
+
+                <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,2,0,0"
+                               TextWrapping="Wrap"/>
+            </StackPanel>
             
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <TextBlock Text="Niveau d'Etude"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,5,0,0"/>
+
+                <TextBox x:Name="txtLevel"
+                                    Text="{Binding Path=Level, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="195"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/level-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Experience"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,7,0,0"/>
+
+                <TextBox x:Name="txtExperience"
+                                    Text="{Binding Path=Experience, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/experience-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+
+
+                <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,2,0,0"
+                               TextWrapping="Wrap"/>
+            </StackPanel>
+            
+            
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <TextBlock Text="Profession"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,5,0,0"/>
+
+                <TextBox x:Name="txtProfession"
+                                    Text="{Binding Path=Profession, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                    CaretBrush="LightGray"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="200"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,0,0"
+                                    Padding="20,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Images/profession-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,9,0,0">
+                    <Button x:Name="btnReset"   
+                            Command="{Binding ResetCommand}"
+                            BorderThickness="0"
+                            Content="Réinitialiser"
+                            Foreground="White"
+                            FontSize="11"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,7,7,0"
+                            >
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#55717E"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#A0BB46"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="75" Height="35"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnUpdate"   
+                            Command="{Binding UpdateCommand}"
+                            BorderThickness="0"
+                            Content="Mettre ajour"
+                            Foreground="White"
+                            FontSize="11"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="7,2,0,0"
+                            >
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#A0BB46"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="75" Height="35"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,30,0,0"
+                               TextWrapping="Wrap"/>
+                
+                
+            </StackPanel>
+
+
+        </StackPanel >
+
+
     </Grid>
 </UserControl>
