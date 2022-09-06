@@ -153,7 +153,7 @@ namespace cvManager.ViewModel
 
 
 
-        private ICommand _saveCommand;
+        private ICommand _updateCommand;
         private ICommand _resetCommand;
         private ICommand _editCommand;
         private ICommand _deleteCommand;
@@ -173,14 +173,14 @@ namespace cvManager.ViewModel
             }
         }
 
-        public ICommand SaveCommand
+        public ICommand UpdateCommand
         {
             get
             {
-                if (_saveCommand == null)
-                    _saveCommand = new ViewModelCommand(param => SaveData(), null);
+                if (_updateCommand == null)
+                    _updateCommand = new ViewModelCommand(param => UpdateData(), null);
 
-                return _saveCommand;
+                return _updateCommand;
             }
         }
 
@@ -189,7 +189,7 @@ namespace cvManager.ViewModel
             get
             {
                 if (_editCommand == null)
-                    _editCommand = new ViewModelCommand(param => EditData((int)param), null);
+                    _editCommand = new ViewModelCommand(param => EditData((int)System.Convert.ToInt32(param)), null);
 
                 return _editCommand;
             }
@@ -211,7 +211,7 @@ namespace cvManager.ViewModel
             //_studentEntity = new Student();
             //_repository = new StudentRepository();
             //StudentRecord = new StudentRecord();
-            //_condidatModel = new CondidatModel();
+            _condidatModel = new CondidatModel();
             _CondidatRepository = new CondidateRepository();
             GetAll();
         }
@@ -250,10 +250,11 @@ namespace cvManager.ViewModel
             }
         }
 
-        public void SaveData()
+        public void UpdateData()
         {
-            if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(LastName)   && String.IsNullOrEmpty(Level) && String.IsNullOrEmpty(Profession))
+            if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(LastName)   && !String.IsNullOrEmpty(Level) && !String.IsNullOrEmpty(Profession))
             {
+                _condidatModel.Id = Id;
                 _condidatModel.Name = Name;
                 _condidatModel.LastName = LastName; 
                 _condidatModel.Level = Level;
@@ -267,8 +268,8 @@ namespace cvManager.ViewModel
 
                 try
                 {
-                    _CondidatRepository.Add(_condidatModel);
-                    MessageBox.Show("la conservation est effectuer avec succée ");
+                    _CondidatRepository.Edit(_condidatModel);
+                    MessageBox.Show("la mise à jour est effectuer avec succée ");
                 }
                 catch (Exception ex)
                 {
@@ -277,6 +278,7 @@ namespace cvManager.ViewModel
                 finally
                 {
                     GetAll();
+                    Id = 0;
                     ResetData();
                 }
             }
@@ -284,12 +286,16 @@ namespace cvManager.ViewModel
 
         public void EditData(int id)
         {
-            /*var model = _repository.Get(id);
-            StudentRecord.Id = model.ID;
-            StudentRecord.Name = model.Name;
-            StudentRecord.Age = (int)model.Age;
-            StudentRecord.Address = model.Address;
-            StudentRecord.Contact = model.Contact;*/
+            
+            var model = _CondidatRepository.GetById(id);
+            Id = (int)Convert.ToInt32(model[0].Id);
+            Name = model[0].Name;
+            LastName = model[0].LastName;
+            Age = (int)Convert.ToInt32(model[0].Age);
+            Email = model[0].Email;
+            Level = model[0].Level;
+            Experience = model[0].Experience;
+            Profession = model[0].Profession;
         }
 
         public void GetAll()
