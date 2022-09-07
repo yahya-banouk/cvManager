@@ -305,9 +305,13 @@ namespace cvManager.ViewModel
                 Email = data.Email,
                 Level = data.Level,
                 Experience = data.Experience,
-                Profession = data.Profession
+                Profession = data.Profession,
+                Sexe = data.Sexe,
+                City = data.City,
 
-            }));
+                Driver = data.Driver
+
+            })) ;
             if (CondidateRecords.Count == 0)
             {
                 
