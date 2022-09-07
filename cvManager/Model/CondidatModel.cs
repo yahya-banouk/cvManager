@@ -16,6 +16,10 @@ namespace cvManager.Model
         public string Level { get; set; }
         public int Experience { get; set; }
         public string Profession { get; set; }
+        public string Sexe { get; set; }
+        public string City { get; set; }
+        public string Driver { get; set; }
+
 
     }
 }

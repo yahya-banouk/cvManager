@@ -24,7 +24,7 @@ namespace cvManager.Repositories
 
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO condidate VALUES (@name,@lastname,@age,@email,@level,@experience,@profission)";
+                    command.CommandText = "INSERT INTO condidate VALUES (@name,@lastname,@age,@email,@level,@experience,@profission,@sexe,@city,@driver)";
                     command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = condidatModel.Name;
                     command.Parameters.Add("@lastname", System.Data.SqlDbType.NVarChar).Value = condidatModel.LastName;
                     command.Parameters.Add("@age", System.Data.SqlDbType.NVarChar).Value = condidatModel.Age;
@@ -32,6 +32,10 @@ namespace cvManager.Repositories
                     command.Parameters.Add("@level", System.Data.SqlDbType.NVarChar).Value = condidatModel.Level;
                     command.Parameters.Add("@experience", System.Data.SqlDbType.NVarChar).Value = condidatModel.Experience;
                     command.Parameters.Add("@profission", System.Data.SqlDbType.NVarChar).Value = condidatModel.Profession;
+                    command.Parameters.Add("@sexe", System.Data.SqlDbType.NVarChar).Value = condidatModel.Sexe;
+                    command.Parameters.Add("@city", System.Data.SqlDbType.NVarChar).Value = condidatModel.City;
+                    command.Parameters.Add("@driver", System.Data.SqlDbType.NVarChar).Value = condidatModel.Driver;
+
                     //Execution
                     command.ExecuteScalar();
 
@@ -69,7 +73,7 @@ namespace cvManager.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "UPDATE condidate SET Name=@Name, LastName=@Lastname, Age=@Age, Email=@Email, [Level]=@Level, Experience=@Experience , Profession=@Profession  WHERE Id=@Id";
+                command.CommandText = "UPDATE condidate SET Name=@Name, LastName=@Lastname, Age=@Age, Email=@Email, [Level]=@Level, Experience=@Experience , Profession=@Profession , Sexe=@Sexe , City=@City, Driver=@Driver  WHERE Id=@Id";
                 command.Parameters.Add("@Id", System.Data.SqlDbType.NVarChar).Value = condidatModel.Id;
                 command.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar).Value = condidatModel.Name;
                 command.Parameters.Add("@Lastname", System.Data.SqlDbType.NVarChar).Value = condidatModel.LastName;
@@ -78,6 +82,10 @@ namespace cvManager.Repositories
                 command.Parameters.Add("@Level", System.Data.SqlDbType.NVarChar).Value = condidatModel.Level;
                 command.Parameters.Add("@Experience", System.Data.SqlDbType.NVarChar).Value = condidatModel.Experience;
                 command.Parameters.Add("@Profession", System.Data.SqlDbType.NVarChar).Value = condidatModel.Profession;
+                command.Parameters.Add("@Sexe", System.Data.SqlDbType.NVarChar).Value = condidatModel.Sexe;
+                command.Parameters.Add("@City", System.Data.SqlDbType.NVarChar).Value = condidatModel.City;
+                command.Parameters.Add("@Driver", System.Data.SqlDbType.NVarChar).Value = condidatModel.Driver;
+
 
 
                 command.ExecuteScalar();
@@ -165,7 +173,7 @@ namespace cvManager.Repositories
 
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from condidate where (Name LIKE '%"+ searchString + "%' ) or (LastName LIKE '%"+ searchString + "%') or  (Email LIKE '%"+ searchString + "%') or ([Level] LIKE '%"+ searchString + "%') or (Profession LIKE '%"+ searchString + "%')";
+                command.CommandText = "Select * from condidate where (Name LIKE '%"+ searchString + "%' ) or (LastName LIKE '%"+ searchString + "%') or  (Email LIKE '%"+ searchString + "%') or ([Level] LIKE '%"+ searchString + "%') or (Profession LIKE '%"+ searchString + "%') or (Sexe LIKE '%"+ searchString + "%') or (City LIKE '%"+ searchString + "%') or (Driver LIKE '%"+ searchString + "%')";
                 
                 Console.WriteLine(command.CommandText);
                 using (var reader = command.ExecuteReader())

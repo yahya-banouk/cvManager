@@ -7,14 +7,18 @@
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" d:DataContext="{d:DesignInstance Type=viewModel:AddCondidateViewModel}"
              xmlns:viewModel="clr-namespace:cvManager.ViewModel" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewModel:AddCondidateViewModel/>
     </UserControl.DataContext>
     <Grid>
+    
         <StackPanel Orientation="Vertical" >
-                   <StackPanel Orientation="Horizontal"  Margin="10,10,10,0" HorizontalAlignment="Center">
+            
+            <StackPanel Orientation="Horizontal"  Margin="10,10,10,0" HorizontalAlignment="Center">
+                        
                 <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+                                
                     <TextBlock Text="Nom"
                                     Foreground="DarkGray"
                                     FontSize="12"
@@ -22,7 +26,8 @@
                                     FontFamily="Montserrat"                             
                                     Margin="0,35,0,0"/>
 
-                                <TextBox x:Name="txtNom"
+                                
+                    <TextBox x:Name="txtNom"
                                     Text="{Binding Path=Name, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
@@ -37,21 +42,29 @@
                                     Margin="0,5,0,0"
                                     Padding="20,0,0,0">
 
-                                <TextBox.Background>
-                                <ImageBrush ImageSource="/Images/user-icon.png"
+                                
+                        <TextBox.Background>
+                                
+                            <ImageBrush ImageSource="/Images/user-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
-                                </TextBox.Background>
-                            </TextBox>
+                                
+                        
+                        </TextBox.Background>
+                            
+                    </TextBox>
 
-                            <TextBlock Text="Prenom"
+                            
+                    <TextBlock Text="Prenom"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,35,0,0"/>
 
-                            <TextBox x:Name="txtPrenom"
+                            
+                    
+                    <TextBox x:Name="txtPrenom"
                                     Text="{Binding Path=LastName, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
@@ -65,34 +78,73 @@
                                     Margin="0,5,0,0"
                                     Padding="20,0,0,0">
 
-                                <TextBox.Background>
-                                    <ImageBrush ImageSource="/Images/lastname-icon.png"
+                                
+                        <TextBox.Background>
+                                   
+                            <ImageBrush ImageSource="/Images/lastname-icon.png"
                                                 Stretch="None"
                                                 AlignmentX="Left"/>
-                                    </TextBox.Background>
+                                    
+                        
+                        </TextBox.Background>
+                                
 
+                            
                     </TextBox>
+                            
+                    <TextBlock Text="Sexe"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,35,0,0"/>
+                            
+                    <ComboBox x:Name="sexe"
+                                    SelectedItem="{Binding Path=Sexe , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    ItemsSource="{Binding Sexes}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="DarkGray"
+                                    
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0"
+                                    Background="Transparent">
+
+
+                            
+                    </ComboBox>
 
 
 
-                            <TextBlock Text=""
+                    
+                    <TextBlock Text=""
                                Foreground="#D7596D"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,30,0,0"
                                TextWrapping="Wrap"/>
-                        </StackPanel>
                         
-                       <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                            <TextBlock Text="Age"
+                </StackPanel>
+                        
+                       
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            
+                    <TextBlock Text="Age"
                                     Foreground="DarkGray"
                                     FontSize="12"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                             
                                     Margin="0,35,0,0"/>
 
-                                <TextBox x:Name="txtAge"
+                                
+                    <TextBox x:Name="txtAge"
                                     Text="{Binding Path=Age, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
@@ -107,21 +159,27 @@
                                     Margin="0,5,0,0"
                                     Padding="20,0,0,0">
 
-                                <TextBox.Background>
-                                <ImageBrush ImageSource="/Images/age-icon.png"
+                                
+                        <TextBox.Background>
+                                
+                            <ImageBrush ImageSource="/Images/age-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
-                                </TextBox.Background>
-                            </TextBox>
+                                
+                        </TextBox.Background>
+                            
+                    </TextBox>
 
-                            <TextBlock Text="Email"
+                            
+                    <TextBlock Text="Email"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,35,0,0"/>
 
-                            <TextBox x:Name="txtEmail"
+                            
+                    <TextBox x:Name="txtEmail"
                                     Text="{Binding Path=Email, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
@@ -135,38 +193,102 @@
                                     Margin="0,5,0,0"
                                     Padding="20,0,0,0">
 
-                                <TextBox.Background>
-                                    <ImageBrush ImageSource="/Images/email-icon.png"
+                                
+                        <TextBox.Background>
+                                    
+                            <ImageBrush ImageSource="/Images/email-icon.png"
                                                 Stretch="None"
                                                 AlignmentX="Left"/>
-                                </TextBox.Background>
-                            </TextBox>
+                                
+                        </TextBox.Background>
+                            
+                    </TextBox>
+                    <TextBlock Text="Ville"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,35,0,0"/>
+
+
+                    <TextBox x:Name="txtVille"
+                                    Text="{Binding Path=City, Mode=TwoWay}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0">
+
+
+                        <TextBox.Background>
+
+                            <ImageBrush ImageSource="/Images/email-icon.png"
+                                                Stretch="None"
+                                                AlignmentX="Left"/>
+
+                        </TextBox.Background>
+
+                    </TextBox>
 
 
 
-                            <TextBlock Text=""
+
+
+                    <TextBlock Text=""
                                Foreground="#D7596D"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
                                Margin="0,30,0,0"
                                TextWrapping="Wrap"/>
-                        </StackPanel>
+                           
+                       
+                </StackPanel>
                         
 
-                    </StackPanel >
+            
+            </StackPanel >
             
             
-                    <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+                    
+            
+            <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+                
                 <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+                    
                     <TextBlock Text="Niveau d'etude"
                                     Foreground="DarkGray"
                                     FontSize="12"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                             
                                     Margin="0,35,0,0"/>
+                    <ComboBox x:Name="txtLevel"
+                                    SelectedItem="{Binding Path=Level , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    ItemsSource="{Binding Levels}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="DarkGray"
+                                    
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0"
+                              Background="Transparent">
+                        
+                        
+                    </ComboBox>
 
-                    <TextBox x:Name="txtLevel"
+                    <!--TextBox x:Name="txtLevel"
                                     Text="{Binding Path=Level, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
@@ -179,14 +301,14 @@
                                     Width="300"
                                     VerticalContentAlignment="Center"
                                     Margin="0,5,0,0"
-                                    Padding="20,0,0,0">
+                                    Padding="20,0,0,0"-->
 
-                        <TextBox.Background>
+                        <!--ComboBox.Background>
                             <ImageBrush ImageSource="/Images/level-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
-                        </TextBox.Background>
-                    </TextBox>
+                        </ComboBox.Background-->
+                    <!--/TextBox-->
 
                     <TextBlock Text="Experience"
                                Foreground="DarkGray"
@@ -228,6 +350,28 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                    <TextBlock Text="permis de conduire"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,35,0,0"/>
+                    <ComboBox x:Name="txtPermis"
+                                    SelectedItem="{Binding Path=Driver , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    ItemsSource="{Binding Drivers}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="DarkGray"
+                                    
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0"
+                              Background="Transparent"/>
                     <TextBlock Text="Profession"
                                     Foreground="DarkGray"
                                     FontSize="12"
@@ -337,6 +481,7 @@
 
             </StackPanel>
             
+        
         </StackPanel>
         
         
