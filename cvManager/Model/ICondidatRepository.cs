@@ -13,6 +13,8 @@ namespace cvManager.Model
         void Add(CondidatModel condidatModel);
         void Edit(CondidatModel condidatModel);
         void Remove(int id);
+
+        List<CondidatModel> GetByWhatever(string searchString);
         List<CondidatModel> GetById(int id);
         List<CondidatModel> GetAll();
         List<CondidatModel> GetByUsername(string name);
