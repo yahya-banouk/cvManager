@@ -22,9 +22,19 @@ namespace cvManager.ViewModel
         private string _level;
         private int _experience;
         private string _profession;
+        private string _sexe;
+        private string _city;
+        private string _driver;
         private ObservableCollection<CondidatModel> _CondidateRecords;
         private ICondidatRepository _CondidatRepository;
         private CondidatModel _condidatModel=null;
+
+        private ObservableCollection<string> _levels;
+        private ObservableCollection<string> _sexes;
+        private ObservableCollection<string> _drivers;
+        public ObservableCollection<string> Sexes { get => _sexes; set => _sexes = value; }
+        public ObservableCollection<string> Drivers { get => _drivers; set => _drivers = value; }
+        public ObservableCollection<string> Levels { get => _levels; set => _levels = value; }
 
         private string _searchString;
 
@@ -135,6 +145,54 @@ namespace cvManager.ViewModel
                 _profession = value;
                 OnPropertyChanged(nameof(Profession));
             }
+        }
+        public string Sexe
+        {
+            get
+            {
+                return _sexe;
+            }
+
+
+            set
+            {
+                _sexe = value;
+                OnPropertyChanged(nameof(Sexe));
+
+            }
+
+        }
+        public string City
+        {
+            get
+            {
+                return _city;
+            }
+
+
+            set
+            {
+                _city = value;
+                OnPropertyChanged(nameof(City));
+
+            }
+
+        }
+        public string Driver
+        {
+            get
+            {
+                return _driver;
+            }
+
+
+            set
+            {
+                _driver = value;
+                OnPropertyChanged(nameof(Driver));
+
+            }
+
         }
         public ObservableCollection<CondidatModel> CondidateRecords 
         { 
@@ -252,7 +310,7 @@ namespace cvManager.ViewModel
             }));
             if (CondidateRecords.Count == 0)
             {
-                Console.WriteLine("le vide a 3mi "+ SearchString);
+                
                 GetAll();
             }
         }
@@ -262,6 +320,18 @@ namespace cvManager.ViewModel
             //_studentEntity = new Student();
             //_repository = new StudentRepository();
             //StudentRecord = new StudentRecord();
+            Levels = new ObservableCollection<string>()
+            {
+                "3eme College","1er Lycée","1er Bac" , "2eme bac", "bac+1", "bac+2", "bac+3", "bac+4" ,  "bac+5",  "bac+6",  "bac+7",  "bac+8",  "bac+9"
+            };
+            Sexes = new ObservableCollection<string>()
+            {
+                "Homme","Femme"
+            };
+            Drivers = new ObservableCollection<string>()
+            {
+                "AM","A1","A","B","EB","C", "EC" ,"D" ,"ED"
+            };
             _condidatModel = new CondidatModel();
             _CondidatRepository = new CondidateRepository();
             GetAll();
@@ -278,6 +348,9 @@ namespace cvManager.ViewModel
             Level = string.Empty;
             Experience = 0;
             Profession = string.Empty;
+            Sexe = string.Empty;
+            City = string.Empty;
+            Driver = string.Empty;
         }
 
         public void DeleteCondidate(int id)
@@ -313,9 +386,12 @@ namespace cvManager.ViewModel
                 _condidatModel.Experience = Experience;
                 _condidatModel.Age = Age;
                 _condidatModel.Email = Email;
+                _condidatModel.Sexe = Sexe;
+                _condidatModel.City = City;
+                _condidatModel.Driver = Driver;
 
 
-                
+
 
                 try
                 {
@@ -347,6 +423,9 @@ namespace cvManager.ViewModel
             Level = model[0].Level;
             Experience = model[0].Experience;
             Profession = model[0].Profession;
+            Sexe = model[0].Sexe;
+            City = model[0].City;
+            Driver = model[0].Driver;
         }
 
         public void GetAll()
@@ -361,7 +440,12 @@ namespace cvManager.ViewModel
                 Email = data.Email,
                 Level = data.Level,
                 Experience = data.Experience,
-                Profession = data.Profession
+                Profession = data.Profession,
+                Sexe = data.Sexe,
+                City = data.City,
+                Driver = data.Driver
+
+                
                  
             }));
         }
