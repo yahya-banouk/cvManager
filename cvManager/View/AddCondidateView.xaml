@@ -105,7 +105,7 @@
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
-                                    Foreground="DarkGray"
+                                    Foreground="#6B6B6B"
                                     
                                     BorderBrush="DarkGray"
                                     BorderThickness="0,0,0,2"
@@ -274,9 +274,9 @@
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
-                                    Foreground="DarkGray"
+                                    Foreground="#6B6B6B"
                                     
-                                    BorderBrush="DarkGray"
+                                    BorderBrush="Gray"
                                     BorderThickness="0,0,0,2"
                                     Height="28"
                                     Width="300"
@@ -362,7 +362,7 @@
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
-                                    Foreground="DarkGray"
+                                    Foreground="#6B6B6B"
                                     
                                     BorderBrush="DarkGray"
                                     BorderThickness="0,0,0,2"
@@ -437,7 +437,7 @@
                     <Button x:Name="btnAdd"   
                             Command="{Binding SaveCommand}"
                             BorderThickness="0"
-                            Content="Ajouter/Mettre ajour"
+                            Content="Ajouter Condidat"
                             Foreground="White"
                             FontSize="12"
                             FontFamily="Montserrat"

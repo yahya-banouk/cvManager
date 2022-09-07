@@ -130,6 +130,7 @@
 
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color12}"
+                                     
                                     Click="Logout_Click" 
                                      >
                             <StackPanel Orientation="Horizontal">
@@ -191,9 +192,9 @@
                     Grid.Column="1">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="1,0" EndPoint="0.5,1.3">
-                            <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0.2"/>
-                            <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0.55"/>
-                            <GradientStop Color="{StaticResource primaryBackColor1}" Offset="1.1"/>
+                        <GradientStop Color="#014B00" Offset="0.2"/>
+                        <GradientStop Color="#11003D" Offset="0.55"/>
+                        <GradientStop Color="#014B00" Offset="1.1"/>
                         </LinearGradientBrush>
                     </Border.Background>
                     <Grid>

@@ -17,8 +17,11 @@ namespace cvManager.ViewModel
 {
     public class MainViewModel: ViewModelBase
     {
+        
         //Fields
         private UserAccountModel _currentuserAccount;
+        
+
 
         //this is for childs views 
         private ViewModelBase _currentChildView;
