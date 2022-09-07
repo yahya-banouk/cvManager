@@ -25,6 +25,7 @@ namespace cvManager.View
         {
             InitializeComponent();
             this.DataContext = new CondidateViewModel();
+            
         }
     }
 }

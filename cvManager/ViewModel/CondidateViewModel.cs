@@ -26,6 +26,9 @@ namespace cvManager.ViewModel
         private ICondidatRepository _CondidatRepository;
         private CondidatModel _condidatModel=null;
 
+        private string _searchString;
+
+
 
         public string Name 
         { 
@@ -68,8 +71,6 @@ namespace cvManager.ViewModel
                 OnPropertyChanged(nameof(LastName));
             }
         }
-
-
         public int Age 
         { 
             get
@@ -148,6 +149,20 @@ namespace cvManager.ViewModel
             }
         }
 
+        public string SearchString 
+        {
+            get
+            {
+                return _searchString;
+            }
+            set
+            {
+                _searchString = value;
+                OnPropertyChanged(nameof(SearchString));
+            }
+        }
+
+
 
 
 
@@ -157,6 +172,8 @@ namespace cvManager.ViewModel
         private ICommand _resetCommand;
         private ICommand _editCommand;
         private ICommand _deleteCommand;
+        private ICommand _searchCommand;
+
         
 
 
@@ -203,6 +220,40 @@ namespace cvManager.ViewModel
                     _deleteCommand = new ViewModelCommand(param => DeleteCondidate((int)System.Convert.ToInt32(param)), null);
 
                 return _deleteCommand;
+            }
+        }
+
+
+        public ICommand SearchCommand
+        {
+            get
+            {
+                if (_searchCommand == null)
+                    _searchCommand = new ViewModelCommand(param => SearchCondidate(), null);
+
+                return _searchCommand;
+            }
+        }
+
+        private void SearchCondidate()
+        {
+            CondidateRecords = new ObservableCollection<CondidatModel>();
+            _CondidatRepository.GetByWhatever(SearchString).ForEach(data => CondidateRecords.Add(new CondidatModel()
+            {
+                Id = data.Id,
+                Name = data.Name,
+                LastName = data.LastName,
+                Age = Convert.ToInt32(data.Age),
+                Email = data.Email,
+                Level = data.Level,
+                Experience = data.Experience,
+                Profession = data.Profession
+
+            }));
+            if (CondidateRecords.Count == 0)
+            {
+                Console.WriteLine("le vide a 3mi "+ SearchString);
+                GetAll();
             }
         }
 

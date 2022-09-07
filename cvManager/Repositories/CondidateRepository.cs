@@ -63,7 +63,7 @@ namespace cvManager.Repositories
 
         public void Edit(CondidatModel condidatModel)
         {
-            Console.WriteLine("here we r");
+            
             using (var connection = GetConnection())
             using (var command = new SqlCommand())
             {
@@ -154,6 +154,27 @@ namespace cvManager.Repositories
                command.ExecuteScalar() ;
 
             }
+        }
+
+        public List<CondidatModel> GetByWhatever(string searchString)
+        {
+            List<CondidatModel> list = null;
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "Select * from condidate where (Name LIKE '%"+ searchString + "%' ) or (LastName LIKE '%"+ searchString + "%') or  (Email LIKE '%"+ searchString + "%') or ([Level] LIKE '%"+ searchString + "%') or (Profession LIKE '%"+ searchString + "%')";
+                
+                Console.WriteLine(command.CommandText);
+                using (var reader = command.ExecuteReader())
+                {
+
+                    list = GetList<CondidatModel>(reader);
+                }
+            }
+            return list;
         }
     }
 
