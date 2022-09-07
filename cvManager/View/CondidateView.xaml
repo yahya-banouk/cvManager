@@ -122,12 +122,13 @@
                     <DataGridTemplateColumn Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Select" x:Name="ButtonEdit" CommandParameter="{Binding Path=Id}"
+                                <Button Content="Select" x:Name="ButtonEdit" CommandParameter="{Binding Path=Id}" 
                                         Command="{Binding Path=DataContext.EditCommand,RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType=UserControl}}">
+                                                AncestorType=UserControl}}"
+                                        Foreground="White">
                                     <Button.Style>
                                         <Style TargetType="Button">
-                                            <Setter Property="Background" Value="{StaticResource color3}"/>
+                                            <Setter Property="Background" Value="#55717E"/>
                                             <Setter Property="Template">
                                                 <Setter.Value>
                                                     <ControlTemplate TargetType="Button">
@@ -142,7 +143,7 @@
                                             </Setter>
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="GreenYellow"/>
+                                                    <Setter Property="Background" Value="#C993F6"/>
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>
@@ -157,7 +158,8 @@
                             <DataTemplate>
                                 <Button Content="Delete" x:Name="ButtonDelete" CommandParameter="{Binding Path=Id}"
                                         Command="{Binding Path=DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor,
-                                                AncestorType=UserControl}}">
+                                                AncestorType=UserControl}}"
+                                        Foreground="White">
                                     <Button.Style>
                                         <Style TargetType="Button">
                                             <Setter Property="Background" Value="{StaticResource color4}"/>
@@ -274,7 +276,7 @@
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
-                                    Foreground="DarkGray"
+                                    Foreground="#6B6B6B"
                                     
                                     BorderBrush="DarkGray"
                                     BorderThickness="0,0,0,2"
@@ -402,7 +404,7 @@
                           
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
-                                    Foreground="DarkGray"
+                                    Foreground="#6B6B6B"
                                     
                                     BorderBrush="DarkGray"
                                     BorderThickness="0,0,0,2"
@@ -471,7 +473,7 @@
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
-                                    Foreground="#FF7D7D7D"
+                                    Foreground="#6B6B6B"
                                     
                                     
                                     BorderThickness="0,0,0,2"

@@ -88,7 +88,7 @@ namespace cvManager.ViewModel
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("",""));
             
-    }
+        }
 
         
 
