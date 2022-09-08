@@ -1,8 +1,10 @@
-﻿using cvManager.Model;
+﻿using CrystalDecisions.Web;
+using cvManager.Model;
 using cvManager.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -231,11 +233,13 @@ namespace cvManager.ViewModel
         private ICommand _editCommand;
         private ICommand _deleteCommand;
         private ICommand _searchCommand;
-
         
 
 
 
+        
+
+        
 
         public ICommand ResetCommand
         {

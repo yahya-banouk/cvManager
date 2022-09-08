@@ -67,3 +67,5 @@ C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\bin\Debug\Micros
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\bin\Debug\fr\Microsoft.VisualStudio.Shell.15.0.resources.dll
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\bin\Debug\fr\Microsoft.VisualStudio.GraphModel.resources.dll
 C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\cvManager.exe.config
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\CondidateCRViewerView.g.cs
+C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\View\CondidateCRViewerView.baml

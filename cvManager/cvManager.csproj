@@ -130,6 +130,9 @@
     <Compile Include="View\AddCondidateView.xaml.cs">
       <DependentUpon>AddCondidateView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CondidateCRViewerView.xaml.cs">
+      <DependentUpon>CondidateCRViewerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CondidateView.xaml.cs">
       <DependentUpon>CondidateView.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddCondidateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CondidateCRViewerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
