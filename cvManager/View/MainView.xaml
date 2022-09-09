@@ -116,7 +116,7 @@
 
                         </RadioButton>
 
-                        <RadioButton Style="{StaticResource menuButton}"
+                        <RadioButton Visibility="Collapsed" Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color13}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
@@ -131,7 +131,8 @@
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color12}"
                                      
-                                    Click="Logout_Click" 
+                                     
+                                    Click="ExecuteLogout" 
                                      >
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="RightFromBracket" Style="{StaticResource menuButtonIcon}"/>

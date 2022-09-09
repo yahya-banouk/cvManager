@@ -15,6 +15,8 @@ using System.Runtime.InteropServices;
 using System.Runtime;
 using System.Windows.Interop;
 using System.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Security.Principal;
 
 namespace cvManager.View
 {
@@ -69,5 +71,19 @@ namespace cvManager.View
             
         
         }
+
+        
+        private void ExecuteLogout(object sender, RoutedEventArgs e)
+        {
+            
+
+            
+            Application.Current.Shutdown();
+
+           
+
+        }
+
+        
     }
 }

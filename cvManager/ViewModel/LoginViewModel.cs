@@ -95,7 +95,7 @@ namespace cvManager.ViewModel
         private bool CanExecuteLoginCommand(object obj)
         {
             bool validData;
-            if (string.IsNullOrWhiteSpace(Username) || Username.Length<3 || Password == null || Password.Length<3  )
+            if (string.IsNullOrWhiteSpace(Username) || Username.Length<5 || Password == null || Password.Length<5  )
                 validData = false;
             else validData = true;
             return validData;
@@ -107,6 +107,7 @@ namespace cvManager.ViewModel
             var isValidUser = userRepository.AuthenticationUser(new NetworkCredential(Username, Password));
             if(isValidUser)
             {
+                
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username), null);
                 IsViewVisible = false;
