@@ -90,6 +90,7 @@
     <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -111,6 +112,14 @@
     </ApplicationDefinition>
     <Compile Include="CustomControls\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CondidateCRDataset.cs">
+      <DependentUpon>CondidateCRDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CondidateCRDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CondidateCRDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\CondidatModel.cs" />
     <Compile Include="Model\ICondidatRepository.cs" />
@@ -135,6 +144,12 @@
     </Compile>
     <Compile Include="View\CondidateView.xaml.cs">
       <DependentUpon>CondidateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CRCondidatePrinter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRCondidatePrinter.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -204,6 +219,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CRCondidatePrinter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRCondidatePrinter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Model\CondidateCRDataset.xsc">
+      <DependentUpon>CondidateCRDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Model\CondidateCRDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CondidateCRDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\CondidateCRDataset.xss">
+      <DependentUpon>CondidateCRDataset.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -232,6 +262,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\profession-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,7 +28,7 @@
                         VerticalAlignment="Top"
                         Grid.Column="0">
                 <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
-                <TextBox Text="{Binding SearchString  , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                <TextBox x:Name="searchString" Text="{Binding SearchString  , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          
                     
                             FontSize="13"
@@ -43,6 +43,39 @@
                              BorderThickness="0,0,0,1"                             
                              VerticalContentAlignment="Center"
                              Margin="5,5,0,0"/>
+                <Button 
+                                                        
+                            Content="Imprimer"                            
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                    Margin="150,5,0,0"
+                    VerticalAlignment="Top" Click="PrintButton_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#773DFF"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" Width="100"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </StackPanel>
             <Button Grid.Column="1"
                             Command="{Binding SearchCommand}"                            
