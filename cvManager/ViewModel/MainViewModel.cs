@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Interop;
 using cvManager.Model;
 using cvManager.Repositories;
 using cvManager.View;
@@ -107,6 +109,7 @@ namespace cvManager.ViewModel
 
         public ICommand ShowAddCondedateViewCommand { get; }
       
+      
        
 
 
@@ -122,6 +125,7 @@ namespace cvManager.ViewModel
             ShowCondidateViewCommand = new ViewModelCommand(ExecuteShowCondidateViewCommand);
             ShowAddCondedateViewCommand = new ViewModelCommand(ExecuteShowAddCondidateViewCommand);
             
+            
 
 
             //Default View
@@ -130,7 +134,8 @@ namespace cvManager.ViewModel
             LoadCurrentUserData();
         }
 
-       
+
+        
 
         private void ExecuteShowAddCondidateViewCommand(object obj)
         {

@@ -7,7 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Image Source="/Images/LOGOHIBAPOWER 2020.png"/>
+        <StackPanel Orientation="Vertical" >
+            <Image Source="/Images/LOGOHIBAPOWER 2020.png" Height="300"/>
+            <TextBlock Text="Votre Partenaire EcoEnergie"
+                               Foreground="DarkGray"
+                               FontSize="50"
+                                HorizontalAlignment="Center"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,7,0,0"/>
+            <TextBlock Text="Depuis plus de 25 ans, notre groupe propose des solutions énergétiques innovantes, "
+                               Foreground="DarkGray"
+                               FontSize="20"
+                                HorizontalAlignment="Center"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,15,0,0"/>
+            <TextBlock Text="fiables et économiques (énergie solaire, groupes électrogènes et UPS)."
+                               Foreground="DarkGray"
+                               FontSize="20"
+                                HorizontalAlignment="Center"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,7,0,0"/>
+            
+
+            
+
+
+        </StackPanel>
+        
+        
 
     </Grid>
 </UserControl>
