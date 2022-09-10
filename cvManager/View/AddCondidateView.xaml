@@ -28,7 +28,7 @@
 
                                 
                     <TextBox x:Name="txtNom"
-                                    Text="{Binding Path=Name, Mode=TwoWay}"
+                                    Text="{Binding Path=LastName, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -65,7 +65,7 @@
                             
                     
                     <TextBox x:Name="txtPrenom"
-                                    Text="{Binding Path=LastName, Mode=TwoWay}"
+                                    Text="{Binding Path=Name, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -260,7 +260,7 @@
             
             <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
                 
-                <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+                <StackPanel Orientation="Vertical" Margin="0,0,25,0">
                     
                     <TextBlock Text="Niveau d'etude"
                                     Foreground="DarkGray"
@@ -309,7 +309,43 @@
                                         AlignmentX="Left"/>
                         </ComboBox.Background-->
                     <!--/TextBox-->
+                    <TextBlock Text="permis de conduire"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,35,0,0"/>
+                    <ComboBox x:Name="txtPermis"
+                                    SelectedItem="{Binding Path=Driver , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    ItemsSource="{Binding Drivers}"
+                                    FontSize="13"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="#6B6B6B"
+                                    
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="300"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,5,0,0"
+                                    Padding="20,0,0,0"
+                              Background="Transparent"/>
 
+                    
+
+
+
+                    <TextBlock Text=""
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,30,0,0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0">
                     <TextBlock Text="Experience"
                                Foreground="DarkGray"
                                FontSize="12"
@@ -337,41 +373,7 @@
                                                 AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
-
-
-
-                    <TextBlock Text=""
-                               Foreground="#D7596D"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"                             
-                               Margin="0,30,0,0"
-                               TextWrapping="Wrap"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                    <TextBlock Text="permis de conduire"
-                                    Foreground="DarkGray"
-                                    FontSize="12"
-                                    FontWeight="Medium"
-                                    FontFamily="Montserrat"                             
-                                    Margin="0,35,0,0"/>
-                    <ComboBox x:Name="txtPermis"
-                                    SelectedItem="{Binding Path=Driver , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                    ItemsSource="{Binding Drivers}"
-                                    FontSize="13"
-                                    FontWeight="Medium"
-                                    FontFamily="Montserrat"                            
-                                    Foreground="#6B6B6B"
-                                    
-                                    BorderBrush="DarkGray"
-                                    BorderThickness="0,0,0,2"
-                                    Height="28"
-                                    Width="300"
-                                    VerticalContentAlignment="Center"
-                                    Margin="0,5,0,0"
-                                    Padding="20,0,0,0"
-                              Background="Transparent"/>
+                    
                     <TextBlock Text="Profession"
                                     Foreground="DarkGray"
                                     FontSize="12"
@@ -400,7 +402,8 @@
                                         AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
-                    <Button x:Name="btnReset"   
+                    <StackPanel Orientation="Horizontal"  Margin="10,10,10,0" HorizontalAlignment="Center">
+                        <Button x:Name="btnReset"   
                             Command="{Binding ResetCommand}"
                             BorderThickness="0"
                             Content="Réinitialiser"
@@ -408,33 +411,33 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="0,20,0,0"
+                            Margin="0,20,30,0"
                             >
 
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#55717E"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#A0BB46"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#55717E"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#A0BB46"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="40"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="120" Height="40"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
-                    <Button x:Name="btnAdd"   
+                        <Button x:Name="btnAdd"   
                             Command="{Binding SaveCommand}"
                             BorderThickness="0"
                             Content="Ajouter Condidat"
@@ -442,32 +445,33 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="0,20,0,0"
+                            Margin="30,20,0,0"
                             >
 
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#462AD8"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#A0BB46"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#462AD8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#A0BB46"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="40"
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="120" Height="40"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                        <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+
 
 
                     <TextBlock Text=""

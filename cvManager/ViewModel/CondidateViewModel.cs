@@ -330,7 +330,7 @@ namespace cvManager.ViewModel
             //StudentRecord = new StudentRecord();
             Levels = new ObservableCollection<string>()
             {
-                "3eme College","1er Lycée","1er Bac" , "2eme bac", "bac+1", "bac+2", "bac+3", "bac+4" ,  "bac+5",  "bac+6",  "bac+7",  "bac+8",  "bac+9"
+                "","3eme College","1er Lycée","1er Bac" , "2eme bac", "bac+1", "bac+2", "bac+3", "bac+4" ,  "bac+5",  "bac+6",  "bac+7",  "bac+8",  "bac+9"
             };
             Sexes = new ObservableCollection<string>()
             {
@@ -338,7 +338,7 @@ namespace cvManager.ViewModel
             };
             Drivers = new ObservableCollection<string>()
             {
-                "AM","A1","A","B","EB","C", "EC" ,"D" ,"ED"
+                "","AM","A1","A","B","EB","C", "EC" ,"D" ,"ED"
             };
             _condidatModel = new CondidatModel();
             _CondidatRepository = new CondidateRepository();

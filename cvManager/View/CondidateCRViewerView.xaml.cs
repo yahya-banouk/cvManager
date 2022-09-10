@@ -63,11 +63,11 @@ namespace cvManager.View
                 //requestString = "Select * from condidate where (Name LIKE '%" + searchString + "%' ) or (LastName LIKE '%" + searchString + "%') or  (Email LIKE '%" + searchString + "%') or ([Level] LIKE '%" + searchString + "%') or (Profession LIKE '%" + searchString + "%') or (Sexe LIKE '%" + searchString + "%') or (City LIKE '%" + searchString + "%') or (Driver LIKE '%" + searchString + "%')";
                 CondidateCRDataset CondidateDataset = new CondidateCRDataset();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(requestString, sqlConnection);
-                sqlDataAdapter.Fill(CondidateDataset.Tables["condidates"]);
+                sqlDataAdapter.Fill(CondidateDataset.Tables["condidate"]);
                 CRCondidatePrinter cRCondidatePrinter = new CRCondidatePrinter();
                 //CrystalReport1 cRCondidatePrinter = new CrystalReport1();
 
-                cRCondidatePrinter.SetDataSource(CondidateDataset.Tables["condidates"]);
+                cRCondidatePrinter.SetDataSource(CondidateDataset.Tables["condidate"]);
                 CondidateViewer.ViewerCore.ReportSource = cRCondidatePrinter;
                 
 

@@ -22,7 +22,7 @@
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="180"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Top"
@@ -33,7 +33,7 @@
                     
                             FontSize="13"
                             Height="24"
-                            Width="300"
+                            Width="200"
                             Background="Transparent"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
@@ -43,41 +43,13 @@
                              BorderThickness="0,0,0,1"                             
                              VerticalContentAlignment="Center"
                              Margin="5,5,0,0"/>
-                <Button 
-                                                        
-                            Content="Imprimer"                            
-                            FontSize="12"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            BorderThickness="0"
-                            Foreground="White"
-                    Margin="150,5,0,0"
-                    VerticalAlignment="Top" Click="PrintButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background" Value="#773DFF"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Height="30" Width="100"
-                                                    CornerRadius="15"
-                                                    Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
-                                                                      HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#836EFB"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                
             </StackPanel>
-            <Button Grid.Column="1"
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Grid.Column="1"
+                        >
+                <Button 
                             Command="{Binding SearchCommand}"                            
                             Content="Search"                            
                             FontSize="12"
@@ -93,7 +65,7 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
-                                    <Border Height="30"
+                                        <Border Height="30" Width="90"
                                                     CornerRadius="15"
                                                     Background="{TemplateBinding Background}">
                                         <ContentPresenter VerticalAlignment="Center"
@@ -110,8 +82,45 @@
                     </Style>
                 </Button.Style>
             </Button>
+            <Button 
+                
+                                                        
+                            Content="Imprimer"                            
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                    Margin="0,5,0,0"
+                    VerticalAlignment="Top" Click="PrintButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                            <Setter Property="Background" Value="#55717E"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Height="30" Width="90"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#836EFB"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            </StackPanel>
+            
         </Grid>
         <Border Grid.Row="1"
+                
                 Background="#200F53"
                 CornerRadius="10" 
                 Padding="10">
@@ -127,14 +136,23 @@
                         <Setter Property="FontSize" Value="15"/>
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="BorderBrush" Value="#3857CB"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        
+                    </Style>
+                </DataGrid.CellStyle>
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
+                        
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="FontFamily" Value="Montserrat"/>
                         <Setter Property="Foreground" Value="#BCBEE0"/>
-                        <Setter Property="FontSize" Value="13"/>
-                        <Setter Property="BorderBrush" Value="Aquamarine"></Setter>
-                        <Setter Property="BorderThickness" Value="2"></Setter>
+                        <Setter Property="FontSize" Value="9"/>
+                        
+                        <Setter Property="BorderBrush" Value="#3857CB"></Setter>
+                        <Setter Property="BorderThickness" Value="1"></Setter>
 
 
                     </Style>
@@ -142,15 +160,15 @@
                 <DataGrid.Columns>
                     
                     <DataGridTextColumn Binding="{Binding Path=Id ,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Nom" Visibility="Hidden" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{Binding Path=Name,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Nom"/>
-                    <DataGridTextColumn Binding="{Binding Path=LastName,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Prenom"/>
-                    <DataGridTextColumn Binding="{Binding Path=Age,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Age"/>
-                    <DataGridTextColumn Binding="{Binding Path=Email,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Email"/>
+                    <DataGridTextColumn Binding="{Binding Path=Name,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Prenom"/>
+                    <DataGridTextColumn Binding="{Binding Path=LastName,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Nom" />
+                    <DataGridTextColumn Binding="{Binding Path=Age,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Age" Width="39"/>
+                    <DataGridTextColumn Binding="{Binding Path=Email,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Email" Width="150"/>
                     <DataGridTextColumn Binding="{Binding Path=Level,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Niveau"/>
                     <DataGridTextColumn Binding="{Binding Path=Profession,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Profession"/>
-                    <DataGridTextColumn Binding="{Binding Path=Sexe,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Sexe"/>
+                    <DataGridTextColumn Binding="{Binding Path=Sexe,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Sexe" Width="40"/>
                     <DataGridTextColumn Binding="{Binding Path=City,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Ville"/>
-                    <DataGridTextColumn Binding="{Binding Path=Driver,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Permis"/>
+                    <DataGridTextColumn Binding="{Binding Path=Driver,Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Permis" Width="55" />
                     
                     <DataGridTemplateColumn Width="50">
                     <DataGridTemplateColumn.CellTemplate>
@@ -234,7 +252,7 @@
                                     Margin="0,5,0,0"/>
 
                 <TextBox x:Name="txtNom"
-                                    Text="{Binding Path=Name, Mode=TwoWay}"
+                                    Text="{Binding Path=LastName, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -263,7 +281,7 @@
                                Margin="0,7,0,0"/>
 
                 <TextBox x:Name="txtPrenom"
-                                    Text="{Binding Path=LastName, Mode=TwoWay}"
+                                    Text="{Binding Path=Name, Mode=TwoWay}"
                                     FontSize="13"
                                     FontWeight="Medium"
                                     FontFamily="Montserrat"                            
@@ -391,12 +409,45 @@
                                Margin="0,2,0,0"
                                TextWrapping="Wrap"/>
 
+                
+                <TextBlock Text="Niveau d'Etude"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,7,0,0"/>
+
+                <ComboBox x:Name="txtLevel"
+                                    SelectedItem="{Binding Path=Level, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    ItemsSource="{Binding Levels}"
+                                    FontSize="13"
+                          
+                          
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                            
+                                    Foreground="#6B6B6B"
+                                    
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="0,0,0,2"
+                                    Height="28"
+                                    Width="195"
+                                    VerticalContentAlignment="Center"
+                                    Margin="0,2,2,0"
+                                    Padding="20,0,0,0">
+
+
+
+                </ComboBox>
+
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                 <TextBlock Text="city"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
-                               Margin="0,7,0,0"/>
+                               Margin="0,5,0,0"/>
 
                 <TextBox x:Name="txtVille"
                                     Text="{Binding Path=City, Mode=TwoWay}"
@@ -418,38 +469,7 @@
                                                 AlignmentX="Left"/>
                     </TextBox.Background>
                 </TextBox>
-
-            </StackPanel>
-            
-            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
-                <TextBlock Text="Niveau d'Etude"
-                                    Foreground="DarkGray"
-                                    FontSize="12"
-                                    FontWeight="Medium"
-                                    FontFamily="Montserrat"                             
-                                    Margin="0,5,0,0"/>
-
-                <ComboBox x:Name="txtLevel"
-                                    SelectedItem="{Binding Path=Level, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                    ItemsSource="{Binding Levels}"
-                                    FontSize="13"
-                          
-                          
-                                    FontWeight="Medium"
-                                    FontFamily="Montserrat"                            
-                                    Foreground="#6B6B6B"
-                                    
-                                    BorderBrush="DarkGray"
-                                    BorderThickness="0,0,0,2"
-                                    Height="28"
-                                    Width="195"
-                                    VerticalContentAlignment="Center"
-                                    Margin="0,2,2,0"
-                                    Padding="20,0,0,0">
-                    
-
-                    
-                </ComboBox>
+                
 
                 <TextBlock Text="Experience"
                                Foreground="DarkGray"
