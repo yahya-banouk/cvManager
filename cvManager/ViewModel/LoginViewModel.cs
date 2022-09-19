@@ -10,6 +10,7 @@ using cvManager.Repositories;
 using System.Net;
 using System.Threading;
 using System.Security.Principal;
+using System.Windows;
 
 namespace cvManager.ViewModel
 {
@@ -86,6 +87,8 @@ namespace cvManager.ViewModel
         {
             userRepository = new UserRepository();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
+            
+
             RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("",""));
             
         }
