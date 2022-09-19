@@ -62,25 +62,16 @@ namespace cvManager.View
             else
                 this.WindowState = WindowState.Normal;
         }
-
-       
-
-        private void Logout_Click(object sender, RoutedEventArgs e)
-        {
-            
-            
-        
-        }
-
-        
+   
         private void ExecuteLogout(object sender, RoutedEventArgs e)
         {
-            
 
-            
+
+            //reauthenticat means also restart the hole app tqoooob
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
 
-           
+
 
         }
 
