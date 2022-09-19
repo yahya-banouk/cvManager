@@ -63,7 +63,7 @@ namespace cvManager.View
                 this.WindowState = WindowState.Normal;
         }
    
-        private void ExecuteLogout(object sender, RoutedEventArgs e)
+        /*private void ExecuteLogout(object sender, RoutedEventArgs e)
         {
 
 
@@ -73,7 +73,7 @@ namespace cvManager.View
 
 
 
-        }
+        }*/
 
         
     }

@@ -131,8 +131,8 @@
                         <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color12}"
                                      
-                                     
-                                    Click="ExecuteLogout" 
+                                     Command="{Binding LogoutCommand}"
+                                    
                                      >
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="RightFromBracket" Style="{StaticResource menuButtonIcon}"/>

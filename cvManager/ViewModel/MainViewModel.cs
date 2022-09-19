@@ -105,12 +105,16 @@ namespace cvManager.ViewModel
         // a command to show the HomeView a command to show the CondidateView
 
         public ICommand ShowHomeViewCommand { get; }
+
         public ICommand ShowCondidateViewCommand { get; }
 
         public ICommand ShowAddCondedateViewCommand { get; }
-      
-      
-       
+
+
+        public ICommand LogoutCommand { get; }
+
+
+
 
 
         //now it's time to initialize these commands in the constructor using the ViewModelCommand class 
@@ -120,6 +124,7 @@ namespace cvManager.ViewModel
         public MainViewModel()
         {
             userRepository = new UserRepository();
+            LogoutCommand = new ViewModelCommand(ExecuteLogoutCommand);
             //here it comes 
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowCondidateViewCommand = new ViewModelCommand(ExecuteShowCondidateViewCommand);
@@ -134,8 +139,12 @@ namespace cvManager.ViewModel
             LoadCurrentUserData();
         }
 
-
-        
+        private void ExecuteLogoutCommand(object obj)
+        {
+            //reauthenticat means also restart the hole app tqoooob
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
 
         private void ExecuteShowAddCondidateViewCommand(object obj)
         {
