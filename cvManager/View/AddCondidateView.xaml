@@ -501,17 +501,62 @@
                     
 
 
-
+                    
                     <TextBlock Text=""
                                Foreground="#D7596D"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"                             
-                               Margin="0,30,0,0"
+                               Margin="0,3,0,0"
                                TextWrapping="Wrap"/>
+                    <TextBlock Text="permis de conduire"
+                                    Foreground="DarkGray"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Montserrat"                             
+                                    Margin="0,3,0,0"/>
+                    <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center" >
+                        
+                        <CheckBox Background="Gray"  Margin="0,0,30,0" IsChecked="{Binding AM_Checked}">
+                            <TextBlock Foreground="White">AM</TextBlock>
+                        </CheckBox>
+                        <CheckBox Background="Gray" Margin="0,0,30,0" IsChecked="{Binding A1_Checked}">
+                            <TextBlock Foreground="White">A1</TextBlock>
+                        </CheckBox>
+                        <CheckBox Background="Gray" Margin="0,0,30,0" IsChecked="{Binding A_Checked}">
+                            <TextBlock Foreground="White">A</TextBlock>
+                        </CheckBox>
+                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+
+                        <CheckBox Background="Gray" Margin="0,0,42,0" IsChecked="{Binding B_Checked}" >
+                            <TextBlock Foreground="White">B</TextBlock>
+                        </CheckBox>
+                        <CheckBox Background="Gray" Margin="0,0,30,0" IsChecked="{Binding EB_Checked}" >
+                            <TextBlock Foreground="White">EB</TextBlock>
+                        </CheckBox>
+                        <CheckBox Background="Gray" Margin="0,0,30,0" IsChecked="{Binding C_Checked}" >
+                            <TextBlock Foreground="White">C</TextBlock>
+                        </CheckBox>
+                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+
+                        <CheckBox Background="Gray" Margin="0,0,35,0"  IsChecked="{Binding EC_Checked}">
+                            <TextBlock Foreground="White">EC</TextBlock>
+                        </CheckBox>
+                        <CheckBox Background="Gray"  Margin="0,0,35,0" IsChecked="{Binding D_Checked}">
+                            <TextBlock Foreground="White">D</TextBlock>
+                        </CheckBox>
+                        <CheckBox Background="Gray" Margin="0,0,30,0" IsChecked="{Binding ED_Checked}" >
+                            <TextBlock Foreground="White">ED</TextBlock>
+                        </CheckBox>
+                    </StackPanel>
                     
-                    
-                    
+
+
+
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="10,0,0,0">
