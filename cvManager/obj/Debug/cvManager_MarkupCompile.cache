@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\App.xaml
-91042317392
+101184705547
 
 291305801219
 411653587697
-CustomControls\BindablePasswordBox.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AddCondidateView.xaml;View\CondidateCRViewerView.xaml;View\CondidateView.xaml;View\HomeView.xaml;View\MainView.xaml;View\LoginView.xaml;
+CustomControls\BindablePasswordBox.xaml;Styles\ButtonStyles.xaml;Styles\ComboBoxStyles.xaml;Styles\UIColors.xaml;View\AddCondidateView.xaml;View\CondidateCRViewerView.xaml;View\CondidateView.xaml;View\HomeView.xaml;View\MainView.xaml;View\LoginView.xaml;
 
 False
 

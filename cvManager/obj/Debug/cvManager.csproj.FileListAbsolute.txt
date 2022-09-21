@@ -137,3 +137,4 @@ C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\obj\Debug\cvManager.csproj.Cor
 C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\obj\Debug\cvManager.csproj.CopyComplete
 C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\obj\Debug\cvManager.exe
 C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\obj\Debug\cvManager.pdb
+C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\obj\Debug\Styles\ComboBoxStyles.baml

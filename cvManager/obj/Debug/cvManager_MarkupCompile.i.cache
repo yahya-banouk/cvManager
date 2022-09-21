@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\obj\Debug\
+C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\obj\Debug\
 cvManager
 none
 false
 DEBUG;TRACE
-C:\Users\hibapower04\source\repos\cvManager\cvManager\cvManager\App.xaml
-91042317392
+C:\Users\ASUS\OneDrive\Bureau\cvManager\cvManager\App.xaml
+101184705547
 
 30-776287399
-40-245270705
-CustomControls\BindablePasswordBox.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AddCondidateView.xaml;View\CondidateCRViewerView.xaml;View\CondidateView.xaml;View\HomeView.xaml;View\MainView.xaml;View\LoginView.xaml;
+40-1565305822
+CustomControls\BindablePasswordBox.xaml;Styles\ButtonStyles.xaml;Styles\ComboBoxStyles.xaml;Styles\UIColors.xaml;View\AddCondidateView.xaml;View\CondidateCRViewerView.xaml;View\CondidateView.xaml;View\HomeView.xaml;View\MainView.xaml;View\LoginView.xaml;
 
-False
+True
 
