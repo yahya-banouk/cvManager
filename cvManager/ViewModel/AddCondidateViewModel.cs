@@ -22,7 +22,20 @@ namespace cvManager.ViewModel
         private string _profession;
         private string _sexe;
         private string _city;
-        private string _driver;
+        //private string _driver;
+
+        //fields tha that handls multiDriver licences  "AM","A1","A","B","EB","C", "EC" ,"D" ,"ED"
+        private bool _am_Checked ;
+        private bool _a1_Checked ;
+        private bool _a_Checked ;
+        private bool _b_Checked ;
+        private bool _eb_Checked ;
+        private bool _c_Checked;
+        private bool _ec_Checked ;
+        private bool _d_Checked ;
+        private bool _ed_Checked;
+
+        private string _driverGeneratedString = "";
 
 
         private ICondidatRepository _CondidatRepository;
@@ -31,13 +44,139 @@ namespace cvManager.ViewModel
         
         private ObservableCollection<string> _levels;
         private ObservableCollection<string> _sexes;
-        private ObservableCollection<string> _drivers;
+        //private ObservableCollection<string> _drivers;
 
 
         public ObservableCollection<string> Sexes { get => _sexes; set => _sexes = value; }
-        public ObservableCollection<string> Drivers { get => _drivers; set => _drivers = value; }
+        //public ObservableCollection<string> Drivers { get => _drivers; set => _drivers = value; }
         public ObservableCollection<string> Levels { get => _levels; set => _levels = value; }
 
+
+        public bool AM_Checked
+        {
+            get
+            {
+                return _am_Checked;
+            }
+            set
+            {
+                _am_Checked = value;
+                OnPropertyChanged(nameof(AM_Checked));
+                
+            }
+        }
+        public bool A1_Checked
+        {
+            get
+            {
+                return _a1_Checked;
+            }
+            set
+            {
+                _a1_Checked = value;
+                OnPropertyChanged(nameof(A1_Checked));
+            }
+        }
+        public bool A_Checked
+        {
+            get
+            {
+                return _a_Checked;
+            }
+            set
+            {
+                _a_Checked = value;
+                OnPropertyChanged(nameof(A_Checked));
+            }
+        }
+        public bool B_Checked
+        {
+            get
+            {
+                return _b_Checked;
+            }
+            set
+            {
+                _b_Checked = value;
+                OnPropertyChanged(nameof(B_Checked));
+            }
+        }
+        public bool EB_Checked
+        {
+            get
+            {
+                return _eb_Checked;
+            }
+            set
+            {
+                _eb_Checked = value;
+                OnPropertyChanged(nameof(EB_Checked));
+            }
+        }
+        public bool C_Checked
+        {
+            get
+            {
+                return _c_Checked;
+            }
+            set
+            {
+                _c_Checked = value;
+                OnPropertyChanged(nameof(C_Checked));
+            }
+        }
+        public bool EC_Checked
+        {
+            get
+            {
+                return _ec_Checked;
+            }
+            set
+            {
+                _ec_Checked = value;
+                OnPropertyChanged(nameof(EC_Checked));
+            }
+        }
+        public bool D_Checked
+        {
+            get
+            {
+                return _d_Checked;
+            }
+            set
+            {
+                _d_Checked = value;
+                OnPropertyChanged(nameof(D_Checked));
+            }
+        }
+        public bool ED_Checked
+        {
+            get
+            {
+                return _ed_Checked;
+            }
+            set
+            {
+                _ed_Checked = value;
+                OnPropertyChanged(nameof(ED_Checked));
+            }
+        }
+
+
+        public string DriverGeneratedString
+        {
+            get
+            {
+                return _driverGeneratedString;
+            }
+
+            set
+
+            {
+                _driverGeneratedString = value;
+                OnPropertyChanged(nameof(DriverGeneratedString));
+            }
+        }
         public string Name
         {
             get
@@ -190,7 +329,7 @@ namespace cvManager.ViewModel
             }
 
         }
-        public string Driver
+        /*public string Driver
         {
             get
             {
@@ -205,7 +344,7 @@ namespace cvManager.ViewModel
 
             }
 
-        }
+        }*/
         
 
         public AddCondidateViewModel()
@@ -221,10 +360,10 @@ namespace cvManager.ViewModel
             {
                 "Homme","Femme"
             };
-            Drivers = new ObservableCollection<string>()
-            {
-                "","AM","A1","A","B","EB","C", "EC" ,"D" ,"ED"
-            };
+            //Drivers = new ObservableCollection<string>()
+            //{
+            //  "","AM","A1","A","B","EB","C", "EC" ,"D" ,"ED"
+           //};
             _condidatModel = new CondidatModel();
             _CondidatRepository = new CondidateRepository();
             
@@ -242,7 +381,17 @@ namespace cvManager.ViewModel
             Profession = string.Empty;
             Sexe = string.Empty;    
             City = string.Empty;
-            Driver = string.Empty;
+            //Driver = string.Empty;
+            AM_Checked = false;
+            A1_Checked = false;
+            A_Checked = false;
+            B_Checked = false;
+            EB_Checked = false;
+            C_Checked = false;
+            EC_Checked = false;
+            D_Checked = false;
+            ED_Checked = false; 
+
 
         }
 
@@ -250,6 +399,16 @@ namespace cvManager.ViewModel
 
         public void SaveData()
         {
+            DriverGeneratedString += (AM_Checked == true) ? "AM" : "" ;
+            DriverGeneratedString += (A1_Checked == true) ? " A1" : "" ;
+            DriverGeneratedString += (A_Checked == true) ? " A" : "" ;
+            DriverGeneratedString += (B_Checked == true) ? " B" : "" ;
+            DriverGeneratedString += (EB_Checked == true) ? " EB" : "" ;
+            DriverGeneratedString += (C_Checked == true) ? " C" : "" ;
+            DriverGeneratedString += (EC_Checked == true) ? " EC" : "" ;
+            DriverGeneratedString += (D_Checked == true) ? " D" : "" ;
+            DriverGeneratedString += (ED_Checked == true) ? " ED" : "" ;
+
             if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(LastName) && !String.IsNullOrEmpty(Level) && !String.IsNullOrEmpty(Profession))
             {
                 _condidatModel.Name = Name;
@@ -261,7 +420,7 @@ namespace cvManager.ViewModel
                 _condidatModel.Email = Email;
                 _condidatModel.Sexe = Sexe;
                 _condidatModel.City = City;
-                _condidatModel.Driver = Driver;
+                _condidatModel.Driver = DriverGeneratedString;
 
 
 

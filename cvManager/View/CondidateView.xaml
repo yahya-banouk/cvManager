@@ -8,7 +8,7 @@
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
              xmlns:viewModel="clr-namespace:cvManager.ViewModel" 
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewModel:CondidateViewModel/>
     </UserControl.DataContext>
@@ -677,7 +677,7 @@
 
 
 
-                <TextBlock Text="Prrmis"
+                <!--TextBlock Text="Prrmis"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
@@ -700,12 +700,42 @@
                             
                                     VerticalContentAlignment="Center"
                                     Margin="0,2,2,0"
-                                    Padding="20,0,0,0" >
+                                    Padding="20,0,0,0">
                     
 
 
 
-                </ComboBox>
+                </ComboBox-->
+                <TextBlock Text="Prrmis"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,7,0,0"/>
+                <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center" >
+
+                    <CheckBox Background="Gray" Content="AM"  Margin="0,0,30,0" IsChecked="{Binding AM_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+                    <CheckBox Background="Gray" Content="A1" Margin="0,0,30,0" IsChecked="{Binding A1_Checked, Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+                    <CheckBox Background="Gray" Content="A" Margin="0,0,30,0" IsChecked="{Binding A_Checked, Mode=TwoWay}"  FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+
+                    <CheckBox Background="Gray" Content="B" Margin="0,0,42,0" IsChecked="{Binding B_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12" />
+                    <CheckBox Background="Gray" Content="EB" Margin="0,0,30,0" IsChecked="{Binding EB_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+                    <CheckBox Background="Gray" Content="C" Margin="0,0,30,0" IsChecked="{Binding C_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="10,0,10,10" HorizontalAlignment="Center">
+
+                    <CheckBox Background="Gray" Content="EC" Margin="0,0,35,0"  IsChecked="{Binding EC_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+                    <CheckBox Background="Gray" Content="D" Margin="0,0,35,0" IsChecked="{Binding D_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+                    <CheckBox Background="Gray" Content="ED" Margin="0,0,30,0" IsChecked="{Binding ED_Checked , Mode=TwoWay}" FontFamily="Montserrat"  Foreground="White" FontSize="12"/>
+
+                </StackPanel>
+
             </StackPanel>
             
             

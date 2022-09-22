@@ -7,7 +7,7 @@
         xmlns:view="clr-namespace:cvManager.ViewModel"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" d:DataContext="{d:DesignInstance Type=view:MainViewModel}"
         mc:Ignorable="d"
-        Title="MainView" Height="700" Width="1300"
+        Title="MainView" Height="750" Width="1400"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
