@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -531,7 +532,36 @@ namespace cvManager.ViewModel
                 }
             }
         }
+        public void ReadDrivers(string driver)
+        {
+            char[] c = new char[driver.Length];
+            using(StringReader sr = new StringReader(driver) )
+            { 
+                if(driver.Length > 0)
+                {
+                    sr.Read(c, 0, driver.Length - 1);
+                    for (int i = 0; i < driver.Length; i++)
+                    {
 
+                        Console.WriteLine(c[i]);
+                        if (c[i].Equals(" "))
+                            continue;
+                        AM_Checked = (c[i].Equals("A") && c[i + 1].Equals("M")) ? true : false;
+                        A1_Checked = (c[i].Equals("A") && c[i + 1].Equals("1")) ? true : false;
+                        A_Checked = (c[i].Equals("A") && c[i + 1].Equals(" ")) ? true : false;
+                        B_Checked = (c[i].Equals("B") && c[i + 1].Equals(" ") && c[i - 1].Equals(" ")) ? true : false;
+                        EB_Checked = (c[i].Equals("E") && c[i + 1].Equals("B")) ? true : false;
+                        C_Checked = (c[i].Equals("C") && c[i + 1].Equals(" ") && c[i - 1].Equals(" ")) ? true : false;
+                        EC_Checked = (c[i].Equals("E") && c[i + 1].Equals("C")) ? true : false;
+                        D_Checked = (c[i].Equals("D") && c[i + 1].Equals(" ") && c[i - 1].Equals("")) ? true : false;
+
+
+
+                    }
+                }
+
+            }
+        }
         public void UpdateData()
         {
             DriverGeneratedString = "";
@@ -593,7 +623,8 @@ namespace cvManager.ViewModel
             Profession = model[0].Profession;
             Sexe = model[0].Sexe;
             City = model[0].City;
-            DriverGeneratedString = model[0].Driver;
+            //DriverGeneratedString = model[0].Driver;
+            ReadDrivers(model[0].Driver);
         }
 
         public void GetAll()
