@@ -544,8 +544,8 @@ namespace cvManager.ViewModel
                     {
 
                         Console.WriteLine(c[i]);
-                        if (c[i].Equals(" "))
-                            continue;
+                        //if (c[i].Equals(" "))
+                          //  continue;
                         AM_Checked = (c[i].Equals("A") && c[i + 1].Equals("M")) ? true : false;
                         A1_Checked = (c[i].Equals("A") && c[i + 1].Equals("1")) ? true : false;
                         A_Checked = (c[i].Equals("A") && c[i + 1].Equals(" ")) ? true : false;
