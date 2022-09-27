@@ -399,15 +399,15 @@ namespace cvManager.ViewModel
 
         public void SaveData()
         {
-            DriverGeneratedString += (AM_Checked == true) ? "AM" : "" ;
-            DriverGeneratedString += (A1_Checked == true) ? " A1" : "" ;
-            DriverGeneratedString += (A_Checked == true) ? " A" : "" ;
-            DriverGeneratedString += (B_Checked == true) ? " B" : "" ;
-            DriverGeneratedString += (EB_Checked == true) ? " EB" : "" ;
-            DriverGeneratedString += (C_Checked == true) ? " C" : "" ;
-            DriverGeneratedString += (EC_Checked == true) ? " EC" : "" ;
-            DriverGeneratedString += (D_Checked == true) ? " D" : "" ;
-            DriverGeneratedString += (ED_Checked == true) ? " ED" : "" ;
+            DriverGeneratedString += (AM_Checked == true) ? " AM " : "" ;
+            DriverGeneratedString += (A1_Checked == true) ? " A1 " : "" ;
+            DriverGeneratedString += (A_Checked == true) ? " A " : "" ;
+            DriverGeneratedString += (B_Checked == true) ? " B " : "" ;
+            DriverGeneratedString += (EB_Checked == true) ? " EB " : "" ;
+            DriverGeneratedString += (C_Checked == true) ? " C " : "" ;
+            DriverGeneratedString += (EC_Checked == true) ? " EC " : "" ;
+            DriverGeneratedString += (D_Checked == true) ? " D " : "" ;
+            DriverGeneratedString += (ED_Checked == true) ? " ED " : "" ;
 
             if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(LastName) && !String.IsNullOrEmpty(Level) && !String.IsNullOrEmpty(Profession))
             {
