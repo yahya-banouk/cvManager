@@ -534,6 +534,7 @@ namespace cvManager.ViewModel
         }
         public void ReadDrivers(string driver)
         {
+            AM_Checked = A1_Checked = A_Checked = B_Checked = EB_Checked = C_Checked = EC_Checked = D_Checked = ED_Checked = false;
             //char[] c = new char[driver.Length];
             //using(StringReader sr = new StringReader(driver) )
             //{ 
