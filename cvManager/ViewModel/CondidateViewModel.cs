@@ -534,46 +534,82 @@ namespace cvManager.ViewModel
         }
         public void ReadDrivers(string driver)
         {
-            char[] c = new char[driver.Length];
-            using(StringReader sr = new StringReader(driver) )
-            { 
+            //char[] c = new char[driver.Length];
+            //using(StringReader sr = new StringReader(driver) )
+            //{ 
+            Console.WriteLine(driver.Length);
                 if(driver.Length > 0)
                 {
-                    sr.Read(c, 0, driver.Length - 1);
-                    for (int i = 0; i < driver.Length; i++)
+                    //sr.Read(c, 0, driver.Length - 1);
+                    for (int i = 0; i < driver.Length-1; i++)
                     {
 
-                        Console.WriteLine(c[i]);
+                        //Console.WriteLine(c[i]);
+                        //Console.WriteLine(c[i + 1]);
                         //if (c[i].Equals(" "))
                           //  continue;
-                        AM_Checked = (c[i].Equals("A") && c[i + 1].Equals("M")) ? true : false;
-                        A1_Checked = (c[i].Equals("A") && c[i + 1].Equals("1")) ? true : false;
-                        A_Checked = (c[i].Equals("A") && c[i + 1].Equals(" ")) ? true : false;
-                        B_Checked = (c[i].Equals("B") && c[i + 1].Equals(" ") && c[i - 1].Equals(" ")) ? true : false;
-                        EB_Checked = (c[i].Equals("E") && c[i + 1].Equals("B")) ? true : false;
-                        C_Checked = (c[i].Equals("C") && c[i + 1].Equals(" ") && c[i - 1].Equals(" ")) ? true : false;
-                        EC_Checked = (c[i].Equals("E") && c[i + 1].Equals("C")) ? true : false;
-                        D_Checked = (c[i].Equals("D") && c[i + 1].Equals(" ") && c[i - 1].Equals("")) ? true : false;
+                        if(!AM_Checked) AM_Checked = (String.Equals(driver[i].ToString(),"A") && String.Equals(driver[i+1].ToString(), "M"));
+                        if(!A1_Checked) A1_Checked = (String.Equals(driver[i].ToString(), "A") && String.Equals(driver[i+1].ToString(), "1")) ;
+                        if(!A_Checked) A_Checked = (String.Equals(driver[i].ToString(), "A") && String.Equals(driver[i+1].ToString(), " ")) ;
+                        if(!B_Checked) B_Checked = (String.Equals(driver[i].ToString(), "B") && String.Equals(driver[i+1].ToString(), " ") && String.Equals(driver[i-1].ToString(), " "));
+                        if(!EB_Checked) EB_Checked = (String.Equals(driver[i].ToString(), "E") && String.Equals(driver[i+1].ToString(), "B"));
+                        if(!C_Checked) C_Checked = (String.Equals(driver[i].ToString(), "C") && String.Equals(driver[i+1].ToString(), " ") && String.Equals(driver[i-1].ToString(), " "));
+                        if(!EC_Checked) EC_Checked = (String.Equals(driver[i].ToString(), "E") && String.Equals(driver[i+1].ToString(), "C"));
+                        if (!D_Checked) D_Checked = (String.Equals(driver[i].ToString(), "D") && String.Equals(driver[i+1].ToString(), " ") && String.Equals(driver[i-1].ToString(), " ")) ;
+                        if (!ED_Checked) ED_Checked = (String.Equals(driver[i].ToString(), "E") && String.Equals(driver[i+1].ToString(), "D"));
+
+                    //
+                    //
+                    //
+                    /*
+
+
+
+                    ED_Checked = (c[i].Equals("E") && c[i + 1].Equals("D"));
+                    */
+
+                    /*AM_Checked = (String.Equals(c[i].ToString(), "A") && String.Equals(c[i + 1].ToString(), "M"));
+                    A1_Checked = (String.Equals(driver[i], "A") && String.Equals(c[i + 1], "1"));
+                    A_Checked = (String.Equals(c[i], "A") && c[i + 1].Equals(" "));
+                    B_Checked = (c[i].Equals("B") && c[i + 1].Equals(" ") && c[i - 1].Equals(" "));
+                    EB_Checked = (c[i].Equals("E") && c[i + 1].Equals("B"));
+                    C_Checked = (c[i].Equals("C") && c[i + 1].Equals(" ") && c[i - 1].Equals(" "));
+                    EC_Checked = (c[i].Equals("E") && c[i + 1].Equals("C"));
+                    D_Checked = (c[i].Equals("D") && c[i + 1].Equals(" ") && c[i - 1].Equals(""));
+                    ED_Checked = (c[i].Equals("E") && c[i + 1].Equals("D"));*/
+
 
 
 
                     }
                 }
+            /*
+             illogique
+                if (!AM_Checked) AM_Checked = false;
+            if (!A1_Checked) A1_Checked = false;
+            if (!A_Checked) A_Checked = false;
+            if (!B_Checked) B_Checked = false;
+            if (!EB_Checked) EB_Checked = false;
+            if (!C_Checked) C_Checked = false;
+            if (!EC_Checked) EC_Checked = false;
+            if (!D_Checked) D_Checked = false;
+            if (!ED_Checked) ED_Checked = false;*/
 
-            }
+
+            //}
         }
         public void UpdateData()
         {
             DriverGeneratedString = "";
-            DriverGeneratedString += (AM_Checked == true) ? "AM" : "";
-            DriverGeneratedString += (A1_Checked == true) ? " A1" : "";
-            DriverGeneratedString += (A_Checked == true) ? " A" : "";
-            DriverGeneratedString += (B_Checked == true) ? " B" : "";
-            DriverGeneratedString += (EB_Checked == true) ? " EB" : "";
-            DriverGeneratedString += (C_Checked == true) ? " C" : "";
-            DriverGeneratedString += (EC_Checked == true) ? " EC" : "";
-            DriverGeneratedString += (D_Checked == true) ? " D" : "";
-            DriverGeneratedString += (ED_Checked == true) ? " ED" : "";
+            DriverGeneratedString += (AM_Checked == true) ? " AM " : "";
+            DriverGeneratedString += (A1_Checked == true) ? " A1 " : "";
+            DriverGeneratedString += (A_Checked == true) ? " A " : "";
+            DriverGeneratedString += (B_Checked == true) ? " B " : "";
+            DriverGeneratedString += (EB_Checked == true) ? " EB " : "";
+            DriverGeneratedString += (C_Checked == true) ? " C " : "";
+            DriverGeneratedString += (EC_Checked == true) ? " EC " : "";
+            DriverGeneratedString += (D_Checked == true) ? " D " : "";
+            DriverGeneratedString += (ED_Checked == true) ? " ED " : "";
             if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(LastName)   && !String.IsNullOrEmpty(Level) && !String.IsNullOrEmpty(Profession))
             {
                 _condidatModel.Id = Id;
@@ -624,7 +660,7 @@ namespace cvManager.ViewModel
             Sexe = model[0].Sexe;
             City = model[0].City;
             //DriverGeneratedString = model[0].Driver;
-            ReadDrivers(model[0].Driver);
+            ReadDrivers(model[0].Driver.ToString());
         }
 
         public void GetAll()
